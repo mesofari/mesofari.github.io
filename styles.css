@@ -627,3 +627,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .benefit-card,
   .module-card { padding: 22px; }
 }
+
+.scan-poster-shell {
+  padding: 14px;
+  background: linear-gradient(160deg, rgba(10,18,30,.98), rgba(6,10,18,.99));
+}
+.scan-poster {
+  display: block;
+  width: 100%;
+  border-radius: 26px;
+  border: 1px solid rgba(57,183,255,.16);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .35);
+}
