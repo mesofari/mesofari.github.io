@@ -3,29 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MESOFARI entwickelt moderne, datenschutzfreundliche Apps ohne unnötige Abos." />
+  <meta name="description" content="MESOFARI – privates Life-OS für Android. Organisiere Finanzen, Aufgaben, Einkauf, Notizen, Verträge, Tresor und mehr – 100 % offline, ohne Werbung und ohne Abo." />
   <meta name="theme-color" content="#05080D" />
-  <title>MESOFARI – Apps, die den Alltag einfacher machen</title>
-  <link rel="icon" href="assets/mesofari-mark.svg" type="image/svg+xml" />
+  <title>MESOFARI – Dein Alltag. An einem Ort.</title>
+  <link rel="icon" href="assets/logo-icon.png" type="image/png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="ambient ambient-one"></div>
-  <div class="ambient ambient-two"></div>
+  <div class="bg-glow glow-one"></div>
+  <div class="bg-glow glow-two"></div>
+  <div class="bg-grid"></div>
 
   <header class="site-header">
-    <div class="container nav-wrap">
+    <div class="container nav-shell">
       <a class="brand" href="#top" aria-label="MESOFARI Startseite">
-        <img src="assets/mesofari-mark.svg" alt="MESOFARI Logo" />
-        <span>MESOFARI</span>
+        <img src="assets/logo-icon.png" alt="MESOFARI Logo" />
+        <div class="brand-copy">
+          <strong>MESOFARI</strong>
+          <span>Dein Alltag. An einem Ort.</span>
+        </div>
       </a>
 
-      <button class="menu-button" aria-label="Navigation öffnen" aria-expanded="false">☰</button>
+      <button class="menu-button" aria-label="Navigation öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
 
       <nav class="main-nav" aria-label="Hauptnavigation">
-        <a href="#apps">Apps</a>
-        <a href="#warum">Warum MESOFARI</a>
-        <a href="#ueber-uns">Über uns</a>
+        <a href="#app">Die App</a>
+        <a href="#screens">Screenshots</a>
+        <a href="#module">Module</a>
+        <a href="#scan">Scan</a>
         <a href="#support">Support</a>
         <a href="#rechtliches">Rechtliches</a>
       </nav>
@@ -36,153 +43,210 @@
     <section class="hero section">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">SOFTWARE FÜR DEN ALLTAG</span>
-          <h1>Einfach. Privat.<br><span>MESOFARI.</span></h1>
-          <p>
-            Wir entwickeln Apps, die Menschen wirklich nutzen können – übersichtlich,
-            zuverlässig und ohne unnötige Abos.
+          <span class="eyebrow">PRIVAT · LOKAL · OHNE ABO</span>
+          <h1>MESOFARI.<br><span>Dein Alltag. An einem Ort.</span></h1>
+          <p class="hero-text">
+            Das private Life‑OS für Android: Organisiere Finanzen, Haushalt,
+            Einkauf, Kalender, Notizen, Verträge, Dateisuche und Tresor –
+            <strong>100 % offline</strong>, ohne Werbung und ohne Cloud-Zwang.
           </p>
+
           <div class="hero-actions">
-            <a class="button button-primary" href="#apps">Unsere Apps ansehen</a>
-            <a class="button button-secondary" href="#ueber-uns">Mehr über MESOFARI</a>
+            <a class="button button-primary" href="#screens">App ansehen</a>
+            <a class="button button-secondary" href="#support">Support</a>
           </div>
-          <div class="trust-row" aria-label="MESOFARI Vorteile">
-            <span>✓ Datenschutz im Fokus</span>
-            <span>✓ Keine Werbung</span>
-            <span>✓ Klare Einmalpreise</span>
+
+          <div class="hero-points" aria-label="MESOFARI Vorteile">
+            <div>
+              <strong>100 % offline</strong>
+              <span>Deine Daten bleiben auf deinem Gerät.</span>
+            </div>
+            <div>
+              <strong>Ohne Werbung</strong>
+              <span>Fokus auf Nutzung statt Ablenkung.</span>
+            </div>
+            <div>
+              <strong>Einmalzahlung</strong>
+              <span>Kein Abo, keine laufenden Kosten.</span>
+            </div>
           </div>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
-          <div class="phone phone-back">
-            <div class="phone-top"></div>
-            <div class="screen mockup-dark">
-              <div class="mini-logo">M</div>
-              <div class="mini-line wide"></div>
-              <div class="mini-line"></div>
-              <div class="mini-grid">
-                <span></span><span></span><span></span><span></span>
-              </div>
-            </div>
+        <div class="hero-visual">
+          <div class="hero-panel hero-poster">
+            <img src="assets/poster-card.jpg" alt="MESOFARI Markenmotiv mit metallischem M-Logo" />
           </div>
-          <div class="phone phone-front">
-            <div class="phone-top"></div>
-            <div class="screen mockup-dark">
-              <div class="screen-badge">MESOFARI</div>
-              <div class="screen-title">Dein Alltag.<br>Einfach organisiert.</div>
-              <div class="screen-card"></div>
-              <div class="screen-card short"></div>
+          <div class="hero-phone">
+            <div class="phone-frame">
+              <img src="assets/home-screen.jpg" alt="MESOFARI Startseite mit Modulen wie Finanzen, Einkauf und Kalender" />
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="apps" class="section apps-section">
+    <section id="app" class="section intro-section">
+      <div class="container">
+        <div class="section-heading narrow">
+          <span class="eyebrow">DIE APP</span>
+          <h2>Alles Wichtige sauber organisiert.</h2>
+          <p>
+            MESOFARI verbindet mehrere wichtige Alltagsbereiche in einer einzigen,
+            klar strukturierten App. Die Oberfläche orientiert sich an einem dunklen,
+            hochwertigen Premium-Design mit klaren Karten, starken Kontrasten und
+            schneller Übersicht.
+          </p>
+        </div>
+
+        <div class="benefit-grid">
+          <article class="benefit-card accent-blue">
+            <div class="benefit-icon">€</div>
+            <h3>Finanzen & Verträge</h3>
+            <p>Budgets, Ausgaben, Sparziele, Verträge, Abos und Erinnerungen im Blick.</p>
+          </article>
+          <article class="benefit-card accent-green">
+            <div class="benefit-icon">✓</div>
+            <h3>Alltag organisieren</h3>
+            <p>Aufgaben, Termine, Einkaufslisten und wichtige Notizen übersichtlich verwalten.</p>
+          </article>
+          <article class="benefit-card accent-violet">
+            <div class="benefit-icon">◆</div>
+            <h3>Privates schützen</h3>
+            <p>Tresor, PIN, Biometrie und lokale Datenhaltung für mehr Sicherheit.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="screens" class="section screens-section">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">UNSERE APPS</span>
-          <h2>Eine Marke. Mehrere praktische Lösungen.</h2>
-          <p>MESOFARI wächst Schritt für Schritt zu einer Familie nützlicher Apps.</p>
+          <span class="eyebrow">SCREENSHOTS</span>
+          <h2>So sieht MESOFARI wirklich aus.</h2>
+          <p>
+            Keine Platzhalter – hier siehst du die echte Designsprache von MESOFARI
+            mit dem metallischen M, dem dunklen Premium-Look und der klaren Struktur.
+          </p>
         </div>
 
-        <div class="app-grid">
-          <article class="app-card featured">
-            <div class="app-topline">
-              <div class="app-icon">M</div>
-              <span class="status status-soon">Bald verfügbar</span>
+        <div class="screens-layout">
+          <article class="screen-card screen-card-large">
+            <div class="screen-text">
+              <span class="screen-label">Home-Dashboard</span>
+              <h3>Schneller Einstieg in alle Bereiche</h3>
+              <p>
+                Die Startseite bündelt die wichtigsten Module in einer klaren Kachelübersicht
+                mit Suche, Navigation und direktem Zugriff.
+              </p>
             </div>
-            <h3>MESOFARI Life‑OS</h3>
-            <p>
-              Eine zentrale Offline-App für wichtige Bereiche des Alltags – ohne Cloud-Zwang,
-              ohne Werbung und ohne laufendes Abo.
-            </p>
-            <div class="feature-tags">
-              <span>Finanzen</span>
-              <span>Aufgaben</span>
-              <span>Kalender</span>
-              <span>Notizen</span>
-              <span>Tresor</span>
-              <span>Verträge</span>
-              <span>Dateisuche</span>
-              <span>Einkauf</span>
-            </div>
-            <div class="app-footer">
-              <span>Für Android</span>
-              <span class="muted">Google Play geplant</span>
+            <div class="device-frame tall">
+              <img src="assets/home-screen.jpg" alt="MESOFARI Home-Dashboard" />
             </div>
           </article>
 
-          <article class="app-card">
-            <div class="app-topline">
-              <div class="app-icon scan-icon">S</div>
-              <span class="status status-dev">In Entwicklung</span>
+          <article class="screen-card">
+            <div class="screen-text">
+              <span class="screen-label">Willkommensseite</span>
+              <h3>Persönlich und hochwertig</h3>
+              <p>Ein starker Einstieg mit klarer Produktidentität und verständlicher Übersicht.</p>
             </div>
-            <h3>Scan by MESOFARI</h3>
-            <p>
-              Eine moderne Scan-App für Dokumente. Schnell erfassen, Texte erkennen,
-              PDFs erstellen, Inhalte durchsuchen und Scans übersichtlich organisieren.
-            </p>
-            <div class="progress-wrap" aria-label="Entwicklungsstatus">
-              <div class="progress-label"><span>Projektstatus</span><strong>In Arbeit</strong></div>
-              <div class="progress"><span></span></div>
+            <div class="device-frame medium">
+              <img src="assets/welcome-screen.jpg" alt="MESOFARI Willkommensseite" />
             </div>
-            <div class="app-footer">
-              <span>Für Android geplant</span>
-              <span class="muted">Coming Soon</span>
+          </article>
+
+          <article class="screen-card">
+            <div class="screen-text">
+              <span class="screen-label">Einstellungen & Datenschutz</span>
+              <h3>Privatsphäre sichtbar mitgedacht</h3>
+              <p>
+                Sprache, Willkommensseite, Benachrichtigungen, Tresor und Dateifreigaben
+                bleiben sauber gegliedert und schnell erreichbar.
+              </p>
+            </div>
+            <div class="device-frame tall">
+              <img src="assets/settings-screen.jpg" alt="MESOFARI Einstellungen und Datenschutz" />
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="warum" class="section values-section">
+    <section id="module" class="section modules-section">
+      <div class="container">
+        <div class="section-heading compact">
+          <span class="eyebrow">MODULE</span>
+          <h2>Ein Life‑OS für deinen Alltag.</h2>
+        </div>
+
+        <div class="module-grid">
+          <article class="module-card"><span>01</span><h3>Finanzen</h3><p>Ausgaben, Einnahmen, Kategorien, Budgets, Sparziele und Monatsübersicht.</p></article>
+          <article class="module-card"><span>02</span><h3>Haushalt & Aufgaben</h3><p>Planen, verteilen, erinnern und Aufgaben klar strukturieren.</p></article>
+          <article class="module-card"><span>03</span><h3>Einkauf</h3><p>Listen, häufige Artikel, Kategorien und schnelle Einkaufsplanung.</p></article>
+          <article class="module-card"><span>04</span><h3>Kalender</h3><p>Termine, Erinnerungen und Überblick über wichtige Tage und Fristen.</p></article>
+          <article class="module-card"><span>05</span><h3>Notizen</h3><p>Gedanken, Infos und Listen an einem Ort – schnell auffindbar.</p></article>
+          <article class="module-card"><span>06</span><h3>Verträge & Abos</h3><p>Kosten, Laufzeiten, Kündigungsfristen und Erinnerungen ordentlich verwalten.</p></article>
+          <article class="module-card"><span>07</span><h3>Tresor</h3><p>PIN, Biometrie und sensible Daten sicher geschützt speichern.</p></article>
+          <article class="module-card"><span>08</span><h3>Dateisuche</h3><p>Freigegebene Ordner durchsuchen und wichtige Dateien schneller finden.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="scan" class="section scan-section">
+      <div class="container scan-grid">
+        <div class="scan-copy">
+          <span class="eyebrow">COMING SOON</span>
+          <h2>Scan by MESOFARI</h2>
+          <p>
+            Neben MESOFARI Life‑OS entsteht bereits die nächste App: eine moderne,
+            datenschutzfreundliche Scan-Lösung für Dokumente und PDFs.
+          </p>
+          <ul class="scan-list">
+            <li>Dokumente schnell scannen</li>
+            <li>PDFs erstellen und organisieren</li>
+            <li>Texterkennung und Suche geplant</li>
+            <li>Einfach, klar und ohne unnötige Abos</li>
+          </ul>
+          <div class="status-pill">In Entwicklung</div>
+        </div>
+
+        <div class="scan-visual" aria-hidden="true">
+          <div class="scan-shell">
+            <div class="scan-bar"></div>
+            <div class="scan-sheet"></div>
+            <div class="scan-lines">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="scan-progress"><span></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section values-section">
       <div class="container">
         <div class="section-heading compact">
           <span class="eyebrow">WARUM MESOFARI</span>
-          <h2>Software ohne unnötigen Ballast.</h2>
+          <h2>Entwickelt mit Fokus auf echte Nutzung.</h2>
         </div>
 
         <div class="value-grid">
           <article class="value-card">
-            <div class="value-number">01</div>
-            <h3>Privatsphäre zuerst</h3>
-            <p>Wo immer möglich, bleiben persönliche Daten direkt auf dem Gerät.</p>
+            <h3>Datenschutz im Mittelpunkt</h3>
+            <p>MESOFARI ist auf lokale Nutzung ausgelegt und verzichtet bewusst auf unnötige Cloud-Abhängigkeiten.</p>
           </article>
           <article class="value-card">
-            <div class="value-number">02</div>
-            <h3>Keine Abo-Falle</h3>
-            <p>Wir bevorzugen klare Einmalpreise statt dauerhaft laufender Kosten.</p>
+            <h3>Ruhige, klare Oberfläche</h3>
+            <p>Das Interface bleibt dunkel, übersichtlich und hochwertig – ohne visuelle Unruhe und ohne Werbedruck.</p>
           </article>
           <article class="value-card">
-            <div class="value-number">03</div>
-            <h3>Für echte Nutzung</h3>
-            <p>Unsere Apps sollen praktische Probleme lösen und verständlich bedienbar bleiben.</p>
+            <h3>Ein Produkt für mehrere Bereiche</h3>
+            <p>Statt viele kleine Apps zu sammeln, bündelt MESOFARI wichtige Alltagsfunktionen an einem Ort.</p>
           </article>
           <article class="value-card">
-            <div class="value-number">04</div>
-            <h3>Schritt für Schritt</h3>
-            <p>Neue Produkte entstehen mit Fokus auf Qualität statt auf möglichst viele Funktionen.</p>
+            <h3>Faire Produktidee</h3>
+            <p>Keine klassische Abo-Falle – sondern eine App, die dauerhaft nutzbar und verständlich bleibt.</p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="ueber-uns" class="section about-section">
-      <div class="container about-grid">
-        <div>
-          <span class="eyebrow">ÜBER MESOFARI</span>
-          <h2>Apps, die sich auf das Wesentliche konzentrieren.</h2>
-        </div>
-        <div class="about-copy">
-          <p>
-            MESOFARI entwickelt digitale Werkzeuge für Menschen, die ihre Apps einfach benutzen
-            möchten – ohne komplizierte Konten, unnötige Werbung oder ständig neue Abonnements.
-          </p>
-          <p>
-            Unser erstes großes Projekt ist MESOFARI Life‑OS. Parallel entsteht mit
-            Scan by MESOFARI bereits die nächste eigenständige App.
-          </p>
         </div>
       </div>
     </section>
@@ -191,25 +255,29 @@
       <div class="container support-card">
         <div>
           <span class="eyebrow">SUPPORT</span>
-          <h2>Fragen zu unseren Apps?</h2>
-          <p>Fragen zu MESOFARI? Unser Support ist per E-Mail erreichbar.</p>
+          <h2>Fragen zu MESOFARI?</h2>
+          <p>
+            Für Fragen, Hinweise oder Supportanliegen erreichst du uns per E‑Mail.
+            Wir helfen dir gern weiter.
+          </p>
         </div>
-        <a class="button button-primary" href="mailto:mesofari.support.app@gmail.com">Support kontaktieren</a>
+        <a class="button button-primary" href="mailto:mesofari.support.app@gmail.com">mesofari.support.app@gmail.com</a>
       </div>
     </section>
 
     <section id="rechtliches" class="section legal-section">
       <div class="container legal-grid">
-        <article>
+        <div>
           <span class="eyebrow">RECHTLICHES</span>
-          <h2>Transparent und erreichbar.</h2>
+          <h2>Datenschutz und Impressum direkt erreichbar.</h2>
           <p>
-            Impressum und Datenschutzerklärung sind direkt auf dieser Website verfügbar.
+            Transparenz ist uns wichtig. Die rechtlichen Informationen zu dieser Website
+            und zu MESOFARI findest du direkt hier.
           </p>
-        </article>
+        </div>
         <div class="legal-links">
           <a href="impressum.html">Impressum <span>→</span></a>
-          <a href="datenschutz.html">Datenschutz <span>→</span></a>
+          <a href="datenschutz.html">Datenschutzerklärung <span>→</span></a>
         </div>
       </div>
     </section>
@@ -218,8 +286,11 @@
   <footer class="site-footer">
     <div class="container footer-wrap">
       <a class="brand footer-brand" href="#top">
-        <img src="assets/mesofari-mark.svg" alt="" />
-        <span>MESOFARI</span>
+        <img src="assets/logo-icon.png" alt="MESOFARI Logo" />
+        <div class="brand-copy">
+          <strong>MESOFARI</strong>
+          <span>Dein Alltag. An einem Ort.</span>
+        </div>
       </a>
       <p>© <span id="year"></span> MESOFARI. Alle Rechte vorbehalten.</p>
     </div>
