@@ -1,795 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Google / SEO -->
-  <title>MESOFARI – Offline Apps ohne Abo | Life-OS für Android</title>
-
-  <meta
-    name="description"
-    content="MESOFARI entwickelt private Android-Apps ohne Werbung, Konto oder Abo. Life-OS vereint Finanzen, Aufgaben, Einkauf, Kalender, Notizen, Verträge, Tresor und Dateisuche – 100 % offline."
-  />
-
-  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MESOFARI – Dein Alltag. An einem Ort.</title>
+  <meta name="description" content="MESOFARI vereint Finanzen, Aufgaben, Einkauf, Kalender, Notizen, Verträge, Tresor und Dateisuche in einer privaten Android-App – lokal, ohne Werbung, ohne Konto und ohne Abo." />
+  <meta name="theme-color" content="#030812" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://www.mesofari.de/" />
-
-  <!-- Browser -->
-  <meta name="theme-color" content="#05080D" />
-  <link rel="icon" href="https://www.mesofari.de/logo-icon.png" type="image/png" />
-  <link rel="apple-touch-icon" href="https://www.mesofari.de/logo-icon.png" />
-
-  <!-- Social Media / Facebook / WhatsApp / LinkedIn -->
+  <link rel="icon" href="assets/mesofari-mark.svg" type="image/svg+xml" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="MESOFARI" />
-  <meta property="og:locale" content="de_DE" />
+  <meta property="og:title" content="MESOFARI – Dein Alltag. An einem Ort." />
+  <meta property="og:description" content="Private Android-Software für deinen Alltag. 100 % offline, ohne Werbung, ohne Konto und ohne Abo." />
   <meta property="og:url" content="https://www.mesofari.de/" />
-  <meta property="og:title" content="MESOFARI – Offline Apps ohne Abo" />
-
-  <meta
-    property="og:description"
-    content="Private Android-Apps für deinen Alltag. 100 % offline, ohne Werbung, ohne Konto und ohne Abo."
-  />
-
-  <meta
-    property="og:image"
-    content="https://www.mesofari.de/poster-card.jpg"
-  />
-
-  <meta
-    property="og:image:alt"
-    content="MESOFARI – private Offline-Apps für Android"
-  />
-
-  <!-- X / Twitter -->
+  <meta property="og:image" content="https://www.mesofari.de/assets/og-preview.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="MESOFARI – Offline Apps ohne Abo" />
-
-  <meta
-    name="twitter:description"
-    content="Private Android-Apps für deinen Alltag. 100 % offline, ohne Werbung, ohne Konto und ohne Abo."
-  />
-
-  <meta
-    name="twitter:image"
-    content="https://www.mesofari.de/poster-card.jpg"
-  />
-
-  <!-- Strukturierte Daten für Google -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "MESOFARI",
-    "url": "https://www.mesofari.de/",
-    "logo": "https://www.mesofari.de/logo-icon.png",
-    "email": "support@mesofari.de",
-    "description": "MESOFARI entwickelt private Android-Apps, die lokal und ohne Werbung, Kontozwang oder Abo funktionieren."
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "MESOFARI",
-    "url": "https://www.mesofari.de/",
-    "inLanguage": "de-DE",
-    "description": "Offizielle Website von MESOFARI – private und lokale Android-Apps ohne Werbung und ohne Abo."
-  }
-  </script>
-
-  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"MESOFARI","url":"https://www.mesofari.de/","email":"support@mesofari.de","description":"MESOFARI entwickelt private Android-Software für den Alltag."}
+  </script>
 </head>
-
 <body>
-  <div class="site-bg" aria-hidden="true">
-    <div class="orb orb-a"></div>
-    <div class="orb orb-b"></div>
-    <div class="orb orb-c"></div>
+<a class="skip-link" href="#main">Zum Inhalt</a>
+<header class="site-header" data-header>
+  <div class="container nav-wrap">
+    <a class="brand" href="#top" aria-label="MESOFARI Startseite">
+      <img src="assets/mesofari-mark.svg" alt="" />
+      <span class="brand-word">MES<span>O</span>FARI</span>
+    </a>
+    <button class="menu-button" type="button" aria-label="Navigation öffnen" aria-expanded="false" data-menu-button><i></i><i></i><i></i></button>
+    <nav class="main-nav" aria-label="Hauptnavigation" data-nav>
+      <a href="#top">Startseite</a><a href="#funktionen">Funktionen</a><a href="#screenshots">Screenshots</a><a href="#privat">Datenschutz</a><a href="impressum.html">Impressum</a><a href="#support">Support</a>
+    </nav>
+    <a class="nav-cta" href="#release">Google Play · bald</a>
   </div>
+</header>
 
-  <header class="site-header" data-header>
-    <div class="container nav-shell">
-
-      <a class="brand" href="#top" aria-label="MESOFARI Startseite">
-        <img src="logo-icon.png" alt="MESOFARI Logo" />
-
-        <div class="brand-text">
-          <strong>MESOFARI</strong>
-          <span>Dein Alltag. An einem Ort.</span>
-        </div>
-      </a>
-
-      <button
-        class="menu-button"
-        type="button"
-        aria-label="Navigation öffnen"
-        aria-expanded="false"
-        data-menu-button
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="main-nav" aria-label="Hauptnavigation" data-nav>
-        <a href="#produkt">Produkt</a>
-        <a href="#funktionen">Funktionen</a>
-        <a href="#privat">Datenschutz</a>
-        <a href="#scan">Scan</a>
-        <a href="#support">Support</a>
-        <a class="nav-cta" href="#play">Google Play · bald</a>
-      </nav>
-
+<main id="main">
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">MESOFARI LIFE-OS</span>
+      <h1>Dein Alltag.<br><span>An einem Ort.</span></h1>
+      <p class="hero-lead">Finanzen, Aufgaben, Einkäufe, Termine, Notizen und mehr – privat auf deinem Gerät. <strong>Ohne Werbung. Ohne Konto. Ohne Abo.</strong></p>
+      <div class="benefit-row" aria-label="Vorteile">
+        <div><b class="ico cloud-off">◒</b><strong>100 %</strong><span>offline</span></div>
+        <div><b class="ico">⊘</b><strong>Keine</strong><span>Werbung</span></div>
+        <div><b class="ico">♙</b><strong>Kein</strong><span>Konto</span></div>
+        <div><b class="ico">▣</b><strong>Einmal</strong><span>bezahlen</span></div>
+      </div>
+      <div class="hero-actions"><a class="btn primary" href="#funktionen">MESOFARI entdecken <span>›</span></a><a class="btn secondary" href="#screenshots">Funktionen ansehen</a></div>
+      <p class="language-note"><span>EU</span> Für den Release in allen EU-Sprachen vorbereitet.</p>
     </div>
-  </header>
-
-  <main id="top">
-
-    <!-- HERO -->
-    <section class="hero section">
-      <div class="container hero-grid">
-
-        <div class="hero-copy reveal">
-
-          <div class="pretitle">
-            <span></span>
-            PRIVATE SOFTWARE FÜR DEN ALLTAG
-          </div>
-
-          <h1>
-            Ein Alltag.<br />
-            <span>Eine App.</span><br />
-            Alles im Griff.
-          </h1>
-
-          <p class="hero-lead">
-            MESOFARI verbindet die wichtigsten Bereiche deines Alltags in einer einzigen
-            Android-App – <strong>100 % offline</strong>, ohne Werbung, ohne Konto und ohne Abo.
-          </p>
-
-          <div class="hero-actions">
-            <a class="button primary" href="#produkt">MESOFARI entdecken</a>
-            <a class="button ghost" href="#scan">Scan by MESOFARI</a>
-          </div>
-
-          <div class="hero-trust" aria-label="Produktvorteile">
-
-            <div>
-              <strong>100 %</strong>
-              <span>offline</span>
-            </div>
-
-            <div>
-              <strong>0</strong>
-              <span>Werbung</span>
-            </div>
-
-            <div>
-              <strong>0</strong>
-              <span>Kontozwang</span>
-            </div>
-
-            <div>
-              <strong>1×</strong>
-              <span>bezahlen</span>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="hero-stage reveal delay-1" aria-label="MESOFARI App Vorschau">
-
-          <div class="hero-glow"></div>
-
-          <div class="brand-poster glass-card">
-            <img
-              src="poster-card.jpg"
-              alt="MESOFARI Markenmotiv mit metallischem M-Logo"
-            />
-          </div>
-
-          <button
-            class="phone phone-hero"
-            type="button"
-            data-lightbox="home-screen.jpg"
-            aria-label="MESOFARI Home-Screenshot vergrößern"
-          >
-            <span class="phone-notch"></span>
-            <img src="home-screen.jpg" alt="MESOFARI Home-Dashboard" />
-          </button>
-
-          <div class="floating-badge badge-offline">
-            <span class="dot"></span>
-            100 % offline
-          </div>
-
-          <div class="floating-badge badge-private">
-            Deine Daten. Dein Gerät.
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="container proof-bar reveal delay-2">
-        <span>FINANZEN</span>
-        <i></i>
-        <span>AUFGABEN</span>
-        <i></i>
-        <span>EINKAUF</span>
-        <i></i>
-        <span>KALENDER</span>
-        <i></i>
-        <span>NOTIZEN</span>
-        <i></i>
-        <span>VERTRÄGE</span>
-        <i></i>
-        <span>TRESOR</span>
-        <i></i>
-        <span>DATEISUCHE</span>
-      </div>
-
-    </section>
-
-
-    <!-- PRODUKT -->
-    <section id="produkt" class="section product-section">
-      <div class="container">
-
-        <div class="section-head reveal">
-
-          <div>
-            <span class="kicker">MESOFARI LIFE-OS</span>
-            <h2>Eine App statt acht einzelner Lösungen.</h2>
-          </div>
-
-          <p>
-            Weniger App-Chaos, weniger Konten, weniger laufende Kosten.
-            MESOFARI bündelt Organisation, Finanzen und private Informationen
-            in einer ruhigen, klaren Oberfläche.
-          </p>
-
-        </div>
-
-        <div class="bento-grid">
-
-          <article class="bento-card bento-large reveal">
-
-            <div class="card-copy">
-
-              <span class="micro-label">HOME-DASHBOARD</span>
-
-              <h3>Alles Wichtige sofort erreichbar.</h3>
-
-              <p>
-                Ein zentraler Einstieg in alle Module – klar gegliedert
-                und ohne unnötige Ablenkung.
-              </p>
-
-              <button
-                class="text-link"
-                type="button"
-                data-lightbox="home-screen.jpg"
-              >
-                Screenshot ansehen <span>↗</span>
-              </button>
-
-            </div>
-
-            <button
-              class="screen-phone"
-              type="button"
-              data-lightbox="home-screen.jpg"
-              aria-label="Home Screenshot öffnen"
-            >
-              <span class="phone-notch"></span>
-              <img src="home-screen.jpg" alt="MESOFARI Home-Dashboard" />
-            </button>
-
-          </article>
-
-
-          <article class="bento-card reveal delay-1">
-
-            <span class="micro-label">PRIVAT BY DESIGN</span>
-
-            <h3>Kein eigenes MESOFARI-Konto.</h3>
-
-            <p>
-              Deine persönlichen Inhalte bleiben lokal auf deinem Gerät.
-              Keine eigene MESOFARI-Cloud notwendig.
-            </p>
-
-            <div class="privacy-orbit" aria-hidden="true">
-              <div class="orbit-ring"></div>
-              <div class="orbit-lock">◆</div>
-            </div>
-
-          </article>
-
-
-          <article class="bento-card reveal delay-2">
-
-            <span class="micro-label">FAIRES MODELL</span>
-
-            <h3>Einmal kaufen. Dauerhaft nutzen.</h3>
-
-            <p>
-              Keine monatliche Gebühr und keine Werbeflächen,
-              die deine Aufmerksamkeit verkaufen.
-            </p>
-
-            <div class="price-mark">
-              <strong>1×</strong>
-              <span>statt Abo</span>
-            </div>
-
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- FUNKTIONEN -->
-    <section id="funktionen" class="section features-section">
-      <div class="container">
-
-        <div class="section-head reveal">
-
-          <div>
-            <span class="kicker">FUNKTIONEN</span>
-            <h2>Gebaut für Dinge, die jeden Tag wichtig sind.</h2>
-          </div>
-
-          <p>
-            Acht Bereiche, ein gemeinsames Design und eine Navigation,
-            die du nicht erst lernen musst.
-          </p>
-
-        </div>
-
-        <div class="feature-grid">
-
-          <article class="feature-card reveal">
-            <div class="feature-icon cyan">€</div>
-            <span>01</span>
-            <h3>Finanzen</h3>
-            <p>
-              Einnahmen, Ausgaben, Budgets, Sparziele,
-              wiederkehrende Zahlungen und Übersichten.
-            </p>
-          </article>
-
-
-          <article class="feature-card reveal delay-1">
-            <div class="feature-icon blue">⌂</div>
-            <span>02</span>
-            <h3>Haushalt & Aufgaben</h3>
-            <p>
-              Aufgaben planen, Personen zuweisen,
-              Fälligkeiten setzen und Erinnerungen nutzen.
-            </p>
-          </article>
-
-
-          <article class="feature-card reveal delay-2">
-            <div class="feature-icon green">✓</div>
-            <span>03</span>
-            <h3>Einkauf</h3>
-            <p>
-              Listen, Favoriten, häufige Artikel,
-              Mengen und Kategorien für den schnellen Einkauf.
-            </p>
-          </article>
-
-
-          <article class="feature-card reveal">
-            <div class="feature-icon violet">31</div>
-            <span>04</span>
-            <h3>Kalender</h3>
-            <p>
-              Termine, Wiederholungen, Notizen und Erinnerungen –
-              lokal und direkt erreichbar.
-            </p>
-          </article>
-
-
-          <article class="feature-card reveal delay-1">
-            <div class="feature-icon amber">✎</div>
-            <span>05</span>
-            <h3>Notizen</h3>
-            <p>
-              Ordner, Tags, Suche, Favoriten und wichtige Gedanken
-              an einem festen Platz.
-            </p>
-          </article>
-
-
-          <article class="feature-card reveal delay-2">
-            <div class="feature-icon red">§</div>
-            <span>06</span>
-            <h3>Verträge & Abos</h3>
-            <p>
-              Kosten, Laufzeiten, Kündigungsfristen,
-              Erinnerungen und Kündigungsschreiben im Blick.
-            </p>
-          </article>
-
-
-          <article class="feature-card reveal">
-            <div class="feature-icon violet">◆</div>
-            <span>07</span>
-            <h3>Tresor</h3>
-            <p>
-              PIN, Biometrie und geschützte Einträge
-              für sensible Informationen.
-            </p>
-          </article>
-
-
-          <article class="feature-card reveal delay-1">
-            <div class="feature-icon blue">⌕</div>
-            <span>08</span>
-            <h3>Dateisuche</h3>
-            <p>
-              Nur freigegebene Ordner durchsuchen –
-              über Androids sichere Dateifreigaben.
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- SHOWCASE -->
-    <section class="section showcase-section">
-      <div class="container showcase-row">
-
-        <div class="showcase-copy reveal">
-
-          <span class="kicker">ECHTE APP · ECHTES DESIGN</span>
-
-          <h2>Keine generischen Demo-Screens.</h2>
-
-          <p>
-            Die Website zeigt die tatsächliche Designsprache von MESOFARI:
-            das metallische M, dunkle Premium-Flächen, klare Karten,
-            starke Akzente und bewusst wenig visuelle Unruhe.
-          </p>
-
-          <div class="showcase-points">
-
-            <div>
-              <span>01</span>
-              <p>Klare Hierarchie statt überladener Menüs</p>
-            </div>
-
-            <div>
-              <span>02</span>
-              <p>Große Touch-Flächen und mobile Lesbarkeit</p>
-            </div>
-
-            <div>
-              <span>03</span>
-              <p>Ein konsistentes Design über alle Module</p>
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="phone-stack reveal delay-1">
-
-          <button
-            class="phone phone-back"
-            type="button"
-            data-lightbox="welcome-screen.jpg"
-            aria-label="Willkommensseite vergrößern"
-          >
-            <span class="phone-notch"></span>
-
-            <img
-              src="welcome-screen.jpg"
-              alt="MESOFARI Willkommensseite"
-            />
-          </button>
-
-
-          <button
-            class="phone phone-front"
-            type="button"
-            data-lightbox="settings-screen.jpg"
-            aria-label="Einstellungen vergrößern"
-          >
-            <span class="phone-notch"></span>
-
-            <img
-              src="settings-screen.jpg"
-              alt="MESOFARI Einstellungen"
-            />
-          </button>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- PRIVATSPHÄRE -->
-    <section id="privat" class="section privacy-section">
-      <div class="container privacy-panel reveal">
-
-        <div class="privacy-copy">
-
-          <span class="kicker">
-            DATENSCHUTZ ALS PRODUKTIDEE
-          </span>
-
-          <h2>
-            Deine Daten.<br />
-            Dein Gerät.
-          </h2>
-
-          <p>
-            MESOFARI ist für lokale Nutzung gedacht.
-            Persönliche App-Inhalte werden nicht automatisch
-            an eine eigene MESOFARI-Cloud gesendet.
-            Du entscheidest, welche Dateien und Ordner du freigibst.
-          </p>
-
-          <div class="privacy-list">
-            <span>✓ Kein MESOFARI-Konto erforderlich</span>
-            <span>✓ Keine eigenen Werbe- oder Tracking-SDKs</span>
-            <span>✓ Dateizugriff nur nach deiner Freigabe</span>
-            <span>✓ PIN und Biometrie für geschützte Bereiche</span>
-          </div>
-
-          <a class="button ghost" href="datenschutz.html">
-            Datenschutz im Detail
-          </a>
-
-        </div>
-
-
-        <button
-          class="privacy-device"
-          type="button"
-          data-lightbox="settings-screen.jpg"
-          aria-label="Datenschutz Einstellungen vergrößern"
-        >
-          <span class="phone-notch"></span>
-
-          <img
-            src="settings-screen.jpg"
-            alt="MESOFARI Datenschutz- und Sicherheitseinstellungen"
-          />
-        </button>
-
-      </div>
-    </section>
-
-
-    <!-- SCAN BY MESOFARI -->
-    <section id="scan" class="section scan-section">
-      <div class="container">
-
-        <div class="scan-panel reveal">
-
-          <div class="scan-copy">
-
-            <div class="scan-topline">
-              <span class="kicker">NÄCHSTE APP</span>
-              <span class="status-chip">IN ENTWICKLUNG</span>
-            </div>
-
-            <h2>Scan by MESOFARI</h2>
-
-            <p>
-              Die nächste eigenständige MESOFARI-App entsteht bereits:
-              Dokumente scannen, PDFs erstellen, Inhalte erkennen
-              und Scans übersichtlich organisieren.
-            </p>
-
-            <div class="scan-tags">
-              <span>Dokumente scannen</span>
-              <span>PDF erstellen</span>
-              <span>OCR geplant</span>
-              <span>Lokale Organisation</span>
-            </div>
-
-            <p class="fineprint">
-              Produktdarstellung zeigt den geplanten Funktionsumfang
-              und kann sich bis zur Veröffentlichung ändern.
-            </p>
-
-          </div>
-
-
-          <button
-            class="scan-art"
-            type="button"
-            data-lightbox="scan-mesofari-promo-v2.png"
-            aria-label="Scan by MESOFARI Vorschau vergrößern"
-          >
-            <img
-              src="scan-mesofari-promo-v2.png"
-              alt="Scan by MESOFARI Produktvorschau"
-            />
-          </button>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- GOOGLE PLAY -->
-    <section id="play" class="section play-section">
-
-      <div class="container play-card reveal">
-
-        <div class="play-logo">
-          <img src="logo-icon.png" alt="MESOFARI" />
-        </div>
-
-        <div class="play-copy">
-
-          <span class="kicker">GOOGLE PLAY</span>
-
-          <h2>MESOFARI kommt auf Android.</h2>
-
-          <p>
-            Die Veröffentlichung wird vorbereitet.
-            Bis dahin findest du hier Produktinfos,
-            Support sowie Datenschutz und Impressum.
-          </p>
-
-        </div>
-
-        <div
-          class="coming-button"
-          aria-label="Bald im Google Play Store"
-        >
-          Bald im Google Play Store
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- SUPPORT -->
-    <section id="support" class="section support-section">
-
-      <div class="container support-grid">
-
-        <div class="support-copy reveal">
-
-          <span class="kicker">SUPPORT</span>
-
-          <h2>Du hast eine Frage zu MESOFARI?</h2>
-
-          <p>
-            Für Fragen, Hinweise oder Support
-            erreichst du MESOFARI direkt per E-Mail.
-          </p>
-
-          <a
-            class="button primary"
-            href="mailto:support@mesofari.de"
-          >
-            Support kontaktieren
-          </a>
-
-        </div>
-
-
-        <div class="support-card reveal delay-1">
-
-          <span>E-MAIL</span>
-
-          <a href="mailto:support@mesofari.de">
-            support@mesofari.de
-          </a>
-
-          <div class="support-separator"></div>
-
-          <span>RECHTLICHES</span>
-
-          <div class="support-links">
-
-            <a href="datenschutz.html">
-              Datenschutz <b>↗</b>
-            </a>
-
-            <a href="impressum.html">
-              Impressum <b>↗</b>
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-
-    <div class="container footer-main">
-
-      <a class="brand footer-brand" href="#top">
-
-        <img
-          src="logo-icon.png"
-          alt="MESOFARI Logo"
-        />
-
-        <div class="brand-text">
-          <strong>MESOFARI</strong>
-          <span>Software für deinen Alltag.</span>
-        </div>
-
-      </a>
-
-      <p>Privat. Lokal. Klar.</p>
-
+    <div class="phone-stage reveal delay-1" aria-label="MESOFARI App Vorschau">
+      <div class="device device-main"><img src="assets/screens/home.webp" alt="MESOFARI Home-Dashboard" /></div>
+      <div class="device device-second"><img src="assets/screens/finance.webp" alt="MESOFARI Finanzübersicht" /></div>
+      <span class="stage-glow" aria-hidden="true"></span>
     </div>
-
-
-    <div class="container footer-bottom">
-
-      <p>
-        © <span id="year"></span> MESOFARI.
-        Alle Rechte vorbehalten.
-      </p>
-
-      <div>
-        <a href="datenschutz.html">Datenschutz</a>
-        <a href="impressum.html">Impressum</a>
-      </div>
-
-    </div>
-
-  </footer>
-
-
-  <!-- LIGHTBOX -->
-  <div
-    class="lightbox"
-    data-lightbox-modal
-    aria-hidden="true"
-  >
-
-    <button
-      class="lightbox-close"
-      type="button"
-      aria-label="Bild schließen"
-      data-lightbox-close
-    >
-      ×
-    </button>
-
-    <img
-      src=""
-      alt="Vergrößerte App-Vorschau"
-      data-lightbox-image
-    />
-
   </div>
+  <div class="hero-fade"></div>
+</section>
 
+<section id="funktionen" class="section features-section">
+  <div class="container">
+    <div class="section-head reveal"><div><span class="eyebrow">FUNKTIONEN</span><h2>Eine App <span>statt acht.</span></h2></div><p>MESOFARI bündelt die wichtigsten Bereiche des Alltags in einer klaren, einheitlichen Oberfläche – schnell erreichbar und vollständig offline nutzbar.</p></div>
+    <div class="feature-grid">
+      <article class="feature-card reveal"><div class="feature-copy"><span class="feature-icon">€</span><h3>Finanzen</h3><p>Einnahmen, Ausgaben, Budgets, Sparziele und wiederkehrende Zahlungen.</p><a href="#screenshots" aria-label="Finanzen ansehen">→</a></div><img src="assets/screens/finance.webp" alt="Finanzen in MESOFARI"></article>
+      <article class="feature-card reveal delay-1"><div class="feature-copy"><span class="feature-icon green">⌂</span><h3>Haushalt & Aufgaben</h3><p>Räume, Personen, Fälligkeiten, Wiederholungen und Erinnerungen.</p><a href="#screenshots">→</a></div><img src="assets/screens/tasks.webp" alt="Haushalt und Aufgaben"></article>
+      <article class="feature-card reveal"><div class="feature-copy"><span class="feature-icon cyan">🛒</span><h3>Einkaufsliste</h3><p>Listen, Kategorien, Mengen, Favoriten und schnelles Abhaken.</p><a href="#screenshots">→</a></div><img src="assets/screens/shopping.webp" alt="Einkaufsliste"></article>
+      <article class="feature-card reveal delay-1"><div class="feature-copy"><span class="feature-icon violet">31</span><h3>Kalender</h3><p>Termine, Wiederholungen und lokale Erinnerungen.</p><a href="#screenshots">→</a></div><img src="assets/screens/calendar.webp" alt="Kalender"></article>
+      <article class="feature-card reveal"><div class="feature-copy"><span class="feature-icon amber">✎</span><h3>Notizen</h3><p>Ordner, Tags, Suche und Favoriten für alles Wichtige.</p><a href="#screenshots">→</a></div><img src="assets/screens/notes.webp" alt="Notizen"></article>
+      <article class="feature-card reveal delay-1"><div class="feature-copy"><span class="feature-icon red">§</span><h3>Verträge & Abos</h3><p>Laufzeiten, Kosten, Erinnerungen, Anhänge und Kündigungsfristen.</p><a href="#screenshots">→</a></div><img src="assets/screens/contracts.webp" alt="Verträge und Abos"></article>
+      <article class="feature-card reveal"><div class="feature-copy"><span class="feature-icon violet">◆</span><h3>Tresor</h3><p>Geschützte Einträge mit PIN und biometrischer Entsperrung.</p><a href="#privat">→</a></div><img src="assets/screens/files-vault.webp" alt="Tresor"></article>
+      <article class="feature-card reveal delay-1"><div class="feature-copy"><span class="feature-icon cyan">⌕</span><h3>Dateisuche</h3><p>Schnelle lokale Suche in den von dir freigegebenen Ordnern.</p><a href="#privat">→</a></div><img src="assets/screens/documents.webp" alt="Dateisuche"></article>
+    </div>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<section id="screenshots" class="section showcase-section">
+  <div class="showcase-bg" aria-hidden="true"></div>
+  <div class="container showcase-grid">
+    <div class="showcase-copy reveal"><span class="eyebrow">SO SIEHT MESOFARI AUS</span><h2>Modern.<br>Übersichtlich.<br><span>Dein Design.</span></h2><p>Echte MESOFARI-Oberflächen statt austauschbarer Demo-Screens. Ein konsistentes dunkles Design verbindet alle Module.</p><a class="text-link" href="#privat">Warum MESOFARI lokal bleibt <span>→</span></a></div>
+    <div class="screen-fan reveal delay-1">
+      <button class="shot s1" data-lightbox="assets/screens/home.webp"><img src="assets/screens/home.webp" alt="Home"></button>
+      <button class="shot s2" data-lightbox="assets/screens/finance.webp"><img src="assets/screens/finance.webp" alt="Finanzen"></button>
+      <button class="shot s3" data-lightbox="assets/screens/tasks.webp"><img src="assets/screens/tasks.webp" alt="Aufgaben"></button>
+      <button class="shot s4" data-lightbox="assets/screens/calendar.webp"><img src="assets/screens/calendar.webp" alt="Kalender"></button>
+      <button class="shot s5" data-lightbox="assets/screens/notes.webp"><img src="assets/screens/notes.webp" alt="Notizen"></button>
+    </div>
+  </div>
+</section>
 
-</body>
-</html>
+<section id="privat" class="section privacy-section">
+  <div class="container privacy-grid">
+    <div class="privacy-copy reveal"><span class="eyebrow">DEINE DATEN GEHÖREN DIR</span><h2>Privat. Lokal. Sicher.</h2><p>Persönliche App-Inhalte bleiben auf deinem Gerät. MESOFARI benötigt kein eigenes Benutzerkonto und betreibt keine eigene Cloud zur Synchronisierung deiner persönlichen Inhalte.</p>
+      <div class="privacy-points"><div><b>☁̸</b><span><strong>Keine Cloud</strong>Keine MESOFARI-Cloud für deine persönlichen App-Inhalte.</span></div><div><b>⊘</b><span><strong>Kein Tracking</strong>Keine eigenen Werbe- oder Tracking-SDKs.</span></div><div><b>♙</b><span><strong>Kein Konto</strong>Direkt nutzen – ohne Registrierung bei MESOFARI.</span></div><div><b>◇</b><span><strong>Deine Kontrolle</strong>Dateizugriff erst nach deiner Freigabe.</span></div></div>
+      <a class="btn secondary" href="datenschutz.html">Datenschutz im Detail</a>
+    </div>
+    <div class="privacy-visual reveal delay-1"><div class="shield"><span>⌑</span></div><div class="privacy-ring r1"></div><div class="privacy-ring r2"></div></div>
+  </div>
+</section>
+
+<section id="scan" class="section scan-section">
+  <div class="container scan-grid">
+    <div class="scan-art reveal"><img src="assets/scan-by-mesofari.webp" alt="Scan by MESOFARI – Produktvorschau"></div>
+    <div class="scan-copy reveal delay-1"><span class="eyebrow">DAS NÄCHSTE PRODUKT</span><h2>Scan by MESOFARI</h2><h3>Scannen. Erkennen. Speichern.</h3><p>Dokumente und Rechnungen schnell erfassen, als PDF speichern und übersichtlich organisieren – mit dem gleichen Fokus auf lokale Nutzung und ein faires Einmalmodell.</p><div class="tag-row"><span>Dokumente</span><span>PDF</span><span>OCR geplant</span><span>Offline</span></div><a class="btn secondary" href="mailto:support@mesofari.de?subject=Interesse%20an%20Scan%20by%20MESOFARI">Interesse vormerken <span>›</span></a></div>
+  </div>
+</section>
+
+<section id="release" class="release-section">
+  <div class="container release-card reveal"><div class="play-mark">▶</div><div><span class="eyebrow">ANDROID</span><h2>MESOFARI kommt auf Google Play.</h2><p>Die Veröffentlichung wird vorbereitet. Website und Support sind bereits online.</p></div><a class="btn primary" href="mailto:support@mesofari.de?subject=MESOFARI%20Release">Zum Release informieren <span>›</span></a></div>
+</section>
+
+<section class="section faq-section" id="faq"><div class="container faq-grid"><div><span class="eyebrow">HÄUFIGE FRAGEN</span><h2>Kurz und klar.</h2></div><div class="faq-list">
+  <details><summary>Brauche ich ein MESOFARI-Konto?<span>+</span></summary><p>Nein. MESOFARI ist ohne eigenes MESOFARI-Konto nutzbar.</p></details>
+  <details><summary>Gibt es Werbung oder ein Abo?<span>+</span></summary><p>Das Produktkonzept setzt auf ein Einmalmodell ohne Werbeflächen und ohne monatliches MESOFARI-Abo.</p></details>
+  <details><summary>Werden meine App-Daten in einer MESOFARI-Cloud gespeichert?<span>+</span></summary><p>Nein. Persönliche App-Inhalte sind für die lokale Verarbeitung auf deinem Gerät konzipiert.</p></details>
+</div></div></section>
+
+<section id="support" class="support-section"><div class="container support-card reveal"><div><span class="eyebrow">SUPPORT & IDEEN</span><h2>Noch Fragen – oder eine Idee vor dem Release?</h2><p>Schreib direkt an MESOFARI. Rückmeldungen zu Funktionen und Alltagssituationen helfen bei der Weiterentwicklung.</p></div><a class="btn primary" href="mailto:support@mesofari.de">support@mesofari.de <span>↗</span></a></div></section>
+</main>
+
+<footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><a class="brand" href="#top"><img src="assets/mesofari-mark.svg" alt=""><span class="brand-word">MES<span>O</span>FARI</span></a><p>Software für deinen Alltag.<br><b>Privat. Lokal. Klar.</b></p></div><div><strong>Produkte</strong><a href="#top">MESOFARI Life-OS</a><a href="#scan">Scan by MESOFARI</a></div><div><strong>Rechtliches</strong><a href="datenschutz.html">Datenschutz</a><a href="impressum.html">Impressum</a></div><div><strong>Support</strong><a href="mailto:support@mesofari.de">support@mesofari.de</a><a href="#faq">Häufige Fragen</a></div></div><div class="container footer-bottom"><span>© <span data-year></span> MESOFARI. Alle Rechte vorbehalten.</span><span>Offline · Privat · Fair</span></div></footer>
+
+<div class="lightbox" data-lightbox-modal aria-hidden="true"><button aria-label="Schließen" data-lightbox-close>×</button><img src="" alt="Vergrößerte MESOFARI Ansicht" data-lightbox-image></div>
+<script src="script.js"></script>
+</body></html>
