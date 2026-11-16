@@ -103,6 +103,20 @@ html{scroll-behavior:smooth}
 .meso-support-thanks .meso-support-small{font-size:12px;color:#bbaec5;margin:0}
 @media(max-width:850px){.meso-support-card{grid-template-columns:1fr}.meso-support-goals{grid-template-columns:1fr}}
 
+
+.meso-transfer{padding:17px;border:1px solid #aa8c5a;border-radius:16px;background:#0d0b18a8;margin-bottom:16px}
+.meso-transfer-caption{display:block;font-size:14px;font-weight:800;color:#efcb8e;margin-bottom:14px}
+.meso-transfer-label{display:block;font-size:12px;color:#dbcbda;font-weight:700;margin:12px 0 7px}
+.meso-transfer-inputline{display:flex;align-items:stretch;gap:7px;min-width:0}
+.meso-transfer-inputline input,.meso-transfer-purpose{display:block;flex:1;min-width:0;width:100%;border:1px solid #63516b;border-radius:8px;background:#181321;padding:11px;font-size:13px;line-height:1.4;color:#fff;overflow-wrap:anywhere}
+.meso-transfer-purpose{width:auto}
+.meso-copy-support{flex-shrink:0;border:1px solid #d8ae70;border-radius:8px;padding:8px 11px;color:#211422;background:#ecc78f;cursor:pointer;font-size:12px;font-weight:800}
+.meso-copy-support:hover{background:#fff0ce}
+.meso-copy-support:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.meso-support-thanks .meso-transfer-help,.meso-support-thanks .meso-transfer-thanks{font-size:12px;line-height:1.6;margin:12px 0;color:#c6b9ce}
+.meso-transfer-thanks a{color:#edcb98;text-decoration:underline}
+@media(max-width:520px){.meso-transfer-inputline{flex-wrap:wrap}.meso-copy-support{min-height:40px}}
+
 </style>
 
   <script type="application/ld+json">
@@ -279,7 +293,15 @@ html{scroll-behavior:smooth}
         <span aria-hidden="true" class="meso-support-heart">♥</span>
         <h4>Danke, dass du dabei bist!</h4>
         <p>Wer uns freiwillig unterstützt, kann auf Wunsch im Live persönlich mit dem angegebenen Namen erwähnt werden. Natürlich geht das auch ganz anonym.</p>
-        <div class="meso-support-notice">Eine sichere Unterstützungsmöglichkeit wird eingerichtet. Bis dahin nehmen wir über diese Website keine Zahlungen entgegen.</div>
+        <div class="meso-transfer" aria-label="Bankdaten für freiwillige Community-Unterstützung">
+          <span class="meso-transfer-caption">Freiwillig per SEPA-Überweisung unterstützen</span>
+          <label class="meso-transfer-label" for="meso-support-iban">N26 Geschäftskonto · IBAN</label>
+          <div class="meso-transfer-inputline"><input id="meso-support-iban" type="text" value="DE68 1001 1001 2294 8592 19" readonly aria-label="IBAN für Community-Unterstützung"><button type="button" class="meso-copy-support" data-copy-text="DE68100110012294859219" aria-label="IBAN kopieren">Kopieren</button></div>
+          <span class="meso-transfer-label">Verwendungszweck</span>
+          <div class="meso-transfer-inputline"><span class="meso-transfer-purpose">Kai Music Lounge – Unterstützung</span><button type="button" class="meso-copy-support" data-copy-text="Kai Music Lounge - Unterstuetzung" aria-label="Verwendungszweck kopieren">Kopieren</button></div>
+          <p class="meso-transfer-help">Betrag frei wählbar. Bitte prüfe den Namen des Zahlungsempfängers vor dem Absenden mit deinen Bankunterlagen. Es gibt keinen automatischen Zahlungsabgleich auf dieser Website.</p>
+        </div>
+        <p class="meso-transfer-thanks">Möchtest du im Live namentlich erwähnt werden? Schreib uns deinen gewünschten Community-Namen separat an <a href="mailto:support@mesofari.de?subject=Kai%20Music%20Lounge%20%E2%80%93%20Dankesch%C3%B6n">support@mesofari.de</a> und teile ausdrücklich mit, dass wir ihn öffentlich nennen dürfen. Ohne Zustimmung erfolgt keine namentliche Erwähnung.</p>
         <p class="meso-support-small">Freiwillige Unterstützung ohne Gegenleistung; keine steuerlich absetzbare gemeinnützige Spende.</p>
       </aside>
     </div>
@@ -356,5 +378,26 @@ html{scroll-behavior:smooth}
 
 <div class="lightbox" data-lightbox-modal aria-hidden="true"><button aria-label="Schließen" data-lightbox-close>×</button><img src="" alt="Vergrößerte MESOFARI Ansicht" data-lightbox-image></div>
 <script src="script.js"></script>
+<script>
+document.addEventListener('click',async function(event){
+  const button=event.target.closest('[data-copy-text]');
+  if(!button)return;
+  const value=button.getAttribute('data-copy-text');
+  const previous=button.textContent;
+  try {
+    if(navigator.clipboard && window.isSecureContext){await navigator.clipboard.writeText(value);}
+    else {
+      const temporary=document.createElement('textarea');
+      temporary.value=value;temporary.style.position='fixed';temporary.style.opacity='0';
+      document.body.appendChild(temporary);temporary.select();
+      const ok=document.execCommand('copy');temporary.remove();
+      if(!ok)throw new Error('Copy unavailable');
+    }
+    button.textContent='Kopiert ✓';
+    button.setAttribute('aria-label','In Zwischenablage kopiert');
+  } catch(e) {button.textContent='Bitte markieren';button.setAttribute('aria-label','Bitte Text manuell kopieren');}
+  window.setTimeout(function(){button.textContent=previous;button.removeAttribute('aria-label');},2200);
+});
+</script>
 </body>
 </html>
