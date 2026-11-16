@@ -10,7 +10,7 @@
 ## XP-Regeln
 - Level 1 bis 50.
 - Schwellen: Level 2–5 jeweils +10 XP; anschließend erhöht sich der nächste benötigte XP-Schritt um 5 XP je Level.
-- Erste gültige Song-Einreichung pro Mitglied und Event: +10 XP. Einzigartigkeit wird durch `unique(event_id,user_id)` erzwungen.
+- Erster durch den Admin freigegebener Song pro Mitglied und Event: +10 XP (nicht schon beim Absenden). Einzigartigkeit wird durch `unique(event_id,user_id)` erzwungen.
 - Unterstützung: 1 € = 1 XP. Gespeichert werden Cent; bei nicht vollen Euro wird für XP abgerundet. 1,99 € => 1 XP; 10 € => 10 XP; 1000 € => 1000 XP.
 - Level 50 ist die Grenze; XP darüber zählen weiter.
 - Öffentliche Ansicht: Community-Namen, XP, Level. Keine Kontodaten, Zahlungshistorie, E-Mail oder Songgeschichte.
@@ -36,3 +36,19 @@ Eine normale SEPA-Überweisung an die N26-IBAN liefert kein vertrauenswürdiges 
 
 ## Fairness
 XP verschafft **keinen Vorrang** in der Songliste. Die Reihenfolge bleibt zeitlich aufsteigend nach Song-Einreichung. Ein Level ist ein öffentliches Anerkennungsabzeichen, kein käuflicher Vorteil.
+
+## Öffentliche Community-Mitglieder (Erweiterung 17.11.2026)
+- Über `music/` erscheint die öffentliche Community-Mitgliederliste mit Level und XP.
+- Bei kostenloser Registrierung wird automatisch ein Profil mit zufälligem Nickname angelegt; ein frei gewählter Name lässt sich nach der Anmeldung über die gesicherte RPC ändern.
+- Alle Besucher können die sichtbaren Nicknames, Level und XP sehen; nicht aber E-Mail-Adressen, Bankdaten, Songgeschichten oder Zahlungsbuchungen.
+- Die Community-Mitgliederseite zeigt aktuell die Top 30. Eine vollständige paginierte Liste und Suche sind für die nächste Phase vorgesehen.
+- Für dauerhafte XP-Zuordnung ist ein Benutzerkonto nötig. Ohne Anmeldung sind keine anonymen XP-Ansprüche verifizierbar.
+- Einreichungen werden aktuell ausschließlich in der Datenbank vorbereitet; eine echte öffentliche Einreichungsoberfläche und die Freigabeoberfläche müssen noch gebaut werden.
+- Eigene Lösch-/Exportfunktionen, Anti-Spam, Datenschutz-Test, Löschfristen und Dienstleisterangaben müssen vor Livegang fertig sein.
+
+## Rechtliche Entwürfe
+- `music/datenschutz.html` (DSGVO-Informationsentwurf)
+- `music/teilnahmebedingungen.html` (Teilnahme- und Fairplaybedingungen)
+- `music/community-melden.html` (Kontakt für problematische Inhalte)
+- Bestehendes `../impressum.html` bleibt erhalten.
+**Keine anwaltliche Prüfung, keine Behauptung vollständiger Compliance.** Tatsächliche Supabase-Region/Unterauftragnehmer, Aufbewahrungszeiten, Berechtigung des Musikstreamings und Moderationsprozesse vor Aktivierung verifizieren.
