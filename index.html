@@ -85,6 +85,24 @@ html{scroll-behavior:smooth}
 .meso-music-coming{display:inline-block;margin-top:15px;border:1px solid #af8759;border-radius:100px;padding:12px 18px;color:#efd8b0;font-weight:700;background:#8d6e3922}
 @media(max-width:800px){.meso-choice-grid{grid-template-columns:1fr}.meso-choice-card{min-height:250px}.meso-music-layout{grid-template-columns:1fr}.meso-music-emblem{max-width:280px}.meso-choice-section{padding-top:68px}}
 
+
+/* Transparente, nicht-priorisierende Community-Unterstützung */
+.meso-support-wrap{padding-top:clamp(40px,6vw,80px)}
+.meso-support-card{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(265px,.85fr);gap:clamp(22px,4vw,55px);padding:clamp(22px,4vw,50px);background:linear-gradient(115deg,rgba(26,18,38,.94),rgba(33,21,42,.82));border:1px solid rgba(207,170,111,.42);border-radius:27px;box-shadow:0 16px 60px #0004}
+.meso-support-kicker{color:#edc789;font-size:11px;letter-spacing:.14em;font-weight:800}
+.meso-support-main h3{font-size:clamp(26px,3vw,39px);line-height:1.18;color:#fff;margin:15px 0 17px}
+.meso-support-main p,.meso-support-thanks p{color:#d6c9dc;line-height:1.75;margin:0 0 20px}
+.meso-support-goals{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:0;margin:27px 0;gap:15px}
+.meso-support-goals li{display:flex;gap:11px;align-items:center;font-weight:700;color:#f8e7cb}
+.meso-support-goals li span{color:#dcb47d;font-size:20px}
+.meso-support-main .meso-support-fair{font-size:14px;border-left:3px solid #e5bf83;padding:10px 0 10px 16px;margin:0;background:#fff1}
+.meso-support-thanks{align-self:stretch;background:linear-gradient(165deg,#392442,#21172e);border-radius:20px;padding:clamp(22px,3vw,34px);border:1px solid #936d7755}
+.meso-support-heart{font-size:42px;color:#f0c48e}
+.meso-support-thanks h4{font-size:clamp(22px,2.5vw,29px);color:#fff;margin:12px 0 14px}
+.meso-support-notice{border:1px solid #aa8c5a;border-radius:14px;background:#9f7c3020;padding:15px;color:#f9dfb5;font-size:14px;line-height:1.55;margin-bottom:20px}
+.meso-support-thanks .meso-support-small{font-size:12px;color:#bbaec5;margin:0}
+@media(max-width:850px){.meso-support-card{grid-template-columns:1fr}.meso-support-goals{grid-template-columns:1fr}}
+
 </style>
 
   <script type="application/ld+json">
@@ -242,6 +260,29 @@ html{scroll-behavior:smooth}
   <div class="container meso-music-layout">
     <div class="meso-music-emblem" aria-hidden="true"><div class="meso-music-orbit"></div><span>♫</span><small>KAI MUSIC LOUNGE</small></div>
     <div class="meso-music-copy"><span class="eyebrow">NEU BEI MESOFARI · MUSIK & COMMUNITY</span><h2 id="music-title">Dein Song.<br><span>Unsere Bühne.</span></h2><p>Willkommen in der Kai Music Lounge! Hier entsteht unsere Community für Themenabende, Live-Musik und eure eigenen Songs.</p><p>Der Song Manager mit Einreichung, Terminen und öffentlicher Warteliste wird vorbereitet. Sobald er freigeschaltet ist, findest du den Zugang hier.</p><span class="meso-music-coming">Song-Einreichungen werden vorbereitet</span></div>
+  </div>
+  <div class="container meso-support-wrap">
+    <div class="meso-support-card">
+      <div class="meso-support-main">
+        <span class="meso-support-kicker">FREIWILLIGE COMMUNITY-UNTERSTÜTZUNG</span>
+        <h3>Gemeinsam machen wir die Lounge noch besser.</h3>
+        <p>Unsere Musikabende leben von euren Songs, Ideen und eurer Begeisterung. Wenn du die Community unterstützen möchtest, hilfst du uns dabei, nach und nach bessere Technik und Programme für unsere Lives zu finanzieren.</p>
+        <ul class="meso-support-goals">
+          <li><span aria-hidden="true">◉</span> Kamera &amp; Bildqualität</li>
+          <li><span aria-hidden="true">♫</span> Mikrofon &amp; Audio</li>
+          <li><span aria-hidden="true">▣</span> Stream Deck, OBS &amp; Software</li>
+          <li><span aria-hidden="true">✧</span> Community-Aktionen</li>
+        </ul>
+        <p class="meso-support-fair"><strong>Wichtig:</strong> Jede Song-Einreichung ist kostenlos. Eine Unterstützung verändert weder die Warteschlange noch die Chancen auf eine Wiedergabe. Es gibt keine VIP-Pflicht und keinen Kaufvorteil.</p>
+      </div>
+      <aside class="meso-support-thanks">
+        <span aria-hidden="true" class="meso-support-heart">♥</span>
+        <h4>Danke, dass du dabei bist!</h4>
+        <p>Wer uns freiwillig unterstützt, kann auf Wunsch im Live persönlich mit dem angegebenen Namen erwähnt werden. Natürlich geht das auch ganz anonym.</p>
+        <div class="meso-support-notice">Eine sichere Unterstützungsmöglichkeit wird eingerichtet. Bis dahin nehmen wir über diese Website keine Zahlungen entgegen.</div>
+        <p class="meso-support-small">Freiwillige Unterstützung ohne Gegenleistung; keine steuerlich absetzbare gemeinnützige Spende.</p>
+      </aside>
+    </div>
   </div>
 </section>
 
