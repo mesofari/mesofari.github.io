@@ -41,7 +41,7 @@ XP verschafft **keinen Vorrang** in der Songliste. Die Reihenfolge bleibt zeitli
 - Über `music/` erscheint die öffentliche Community-Mitgliederliste mit Level und XP.
 - Bei kostenloser Registrierung wird automatisch ein Profil mit zufälligem Nickname angelegt; ein frei gewählter Name lässt sich nach der Anmeldung über die gesicherte RPC ändern.
 - Alle Besucher können die sichtbaren Nicknames, Level und XP sehen; nicht aber E-Mail-Adressen, Bankdaten, Songgeschichten oder Zahlungsbuchungen.
-- Die Community-Mitgliederseite zeigt aktuell die Top 30. Eine vollständige paginierte Liste und Suche sind für die nächste Phase vorgesehen.
+- Die Community-Mitgliederseite zeigt zunächst 30 Profile und lädt über „Weitere Mitglieder anzeigen“ alle weiteren seitenweise. Die Daten kommen aus einer besonders eingeschränkten RPC ohne interne Benutzer-IDs.
 - Für dauerhafte XP-Zuordnung ist ein Benutzerkonto nötig. Ohne Anmeldung sind keine anonymen XP-Ansprüche verifizierbar.
 - Einreichungen werden aktuell ausschließlich in der Datenbank vorbereitet; eine echte öffentliche Einreichungsoberfläche und die Freigabeoberfläche müssen noch gebaut werden.
 - Eigene Lösch-/Exportfunktionen, Anti-Spam, Datenschutz-Test, Löschfristen und Dienstleisterangaben müssen vor Livegang fertig sein.
@@ -52,3 +52,10 @@ XP verschafft **keinen Vorrang** in der Songliste. Die Reihenfolge bleibt zeitli
 - `music/community-melden.html` (Kontakt für problematische Inhalte)
 - Bestehendes `../impressum.html` bleibt erhalten.
 **Keine anwaltliche Prüfung, keine Behauptung vollständiger Compliance.** Tatsächliche Supabase-Region/Unterauftragnehmer, Aufbewahrungszeiten, Berechtigung des Musikstreamings und Moderationsprozesse vor Aktivierung verifizieren.
+
+## Rechtliche Quellen und Prüfbedarf (Stand November 2026)
+- § 5 DDG: https://www.gesetze-im-internet.de/ddg/__5.html
+- Art. 13 DSGVO: https://eur-lex.europa.eu/eli/reg/2016/679/oj
+- Bundesnetzagentur DSA-Pflichten (Einordnung je nach Dienst erforderlich): https://www.bundesnetzagentur.de/DE/Fachthemen/DSC/1_Themen/PflichtenVermittlunggsdienste/start.html
+- Musikrechte im Social Media-Stream: https://www.gema.de/de/hilfe/musiknutzer/musik-nutzen/social-media-websites
+- EU-ODR-Plattform geschlossen seit Juli 2025: https://consumer-redress.ec.europa.eu/site-relocation_en
