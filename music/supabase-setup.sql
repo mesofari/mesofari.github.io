@@ -148,10 +148,11 @@ alter table public.lounge_xp_ledger enable row level security;
 alter table public.lounge_supports enable row level security;
 revoke all on public.lounge_profiles,public.lounge_events,public.lounge_songs,
  public.lounge_xp_ledger,public.lounge_supports from anon,authenticated;
-grant select on public.lounge_profiles,public.lounge_events to anon,authenticated;
+grant select on public.lounge_profiles to authenticated;
+grant select on public.lounge_events to anon,authenticated;
 grant select,insert on public.lounge_songs to authenticated;
 grant select on public.lounge_xp_ledger to authenticated;
-create policy "All can see public levels" on public.lounge_profiles for select to anon,authenticated using(true);
+create policy "Member can see own profile" on public.lounge_profiles for select to authenticated using(user_id=(select auth.uid()));
 create policy "All can view event schedule" on public.lounge_events for select to anon,authenticated using(true);
 create policy "Users see own songs" on public.lounge_songs for select to authenticated using(user_id=(select auth.uid()));
 create policy "Users submit own song" on public.lounge_songs for insert to authenticated
@@ -194,3 +195,17 @@ revoke execute on function public.lounge_set_display_name(text) from public,anon
 grant execute on function public.lounge_set_display_name(text) to authenticated;
 -- Public read rights are intentional for ranking. Prevent clients from
 -- editing points or claiming a different display name.
+
+-- Privacy-preserving paginated public directory: no user_id, no email.
+create or replace function public.lounge_members_page(p_offset integer default 0, p_limit integer default 30)
+returns table(display_name text, xp bigint, member_count bigint)
+language sql stable security definer set search_path = ''
+as $$
+ select p.display_name,p.xp,count(*) over()::bigint
+ from public.lounge_profiles p
+ order by p.xp desc,p.created_at asc,p.user_id asc
+ limit greatest(1,least(coalesce(p_limit,30),100))
+ offset greatest(0,coalesce(p_offset,0))
+$$;
+revoke execute on function public.lounge_members_page(integer,integer) from public;
+grant execute on function public.lounge_members_page(integer,integer) to anon,authenticated;
