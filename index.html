@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MESOFARI – Apps & Spiele für Android | Life OS, Scan, SHIFT & Candy Snake-ZUCKERVYX</title>
-  <meta name="description" content="MESOFARI entwickelt Apps und Spiele für Android: Life OS, Scan by MESOFARI und MESOFARI SHIFT sind bei Google Play erhältlich. Candy Snake-ZUCKERVYX ist in Vorbereitung." />
+  <title>MESOFARI – Apps, Spiele & Kai Music Lounge</title>
+  <meta name="description" content="MESOFARI verbindet Android-Apps, mobile Spiele und die Kai Music Lounge mit Themenabenden und Musik-Community." />
   <meta name="theme-color" content="#030812" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://www.mesofari.de/" />
@@ -53,6 +53,38 @@ html{scroll-behavior:smooth}
 @media (max-width:1020px){.meso-product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.meso-game-feature{grid-template-columns:1fr}.meso-game-image{min-height:240px}.meso-games-head{align-items:flex-start}}
 @media (max-width:700px){.meso-product-grid,.meso-worlds{grid-template-columns:1fr}.meso-games-head{flex-direction:column}.meso-product-art{height:195px}.meso-game-image{min-height:205px}.meso-worlds img{aspect-ratio:2.3}.meso-game-info{padding:24px}.meso-game-info h3{font-size:26px}.meso-status{align-self:flex-start}.meso-catalog,.meso-games{padding-block:60px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.meso-product{transition:none}.meso-product:hover{transform:none}}
+
+/* MESOFARI Drei-Welten-Start und Kai Music Lounge – additive Styles */
+#welten,#music{scroll-margin-top:100px}
+.meso-choice-section{position:relative;padding:clamp(72px,9vw,126px) 0 80px;background:radial-gradient(ellipse at 80% 0%,rgba(39,87,169,.18),transparent 55%),#050914;color:#f7faff}
+.meso-choice-heading{text-align:center;max-width:760px;margin:0 auto 42px}
+.meso-choice-heading h1{font-size:clamp(36px,5.5vw,66px);letter-spacing:-.045em;line-height:1.12;margin:14px 0 18px;color:#fff}
+.meso-choice-heading h1 span{color:#8ac6ff}
+.meso-choice-heading p{color:#adbed4;font-size:clamp(15px,2vw,19px);line-height:1.65}
+.meso-choice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.meso-choice-card{display:flex;flex-direction:column;gap:13px;min-height:340px;padding:30px;border:1px solid #2b496d;border-radius:24px;background:radial-gradient(circle at 90% 0%,rgba(46,148,244,.18),transparent 58%),linear-gradient(145deg,#10213a,#091426);color:#d0deef;text-decoration:none;transition:transform .2s,border-color .2s,box-shadow .2s}
+.meso-choice-card:hover,.meso-choice-card:focus-visible{transform:translateY(-5px);border-color:#7ebdff;box-shadow:0 22px 60px rgba(0,0,0,.24)}
+.meso-choice-card:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.meso-choice-symbol{font-size:43px;line-height:1;color:#8ccaff;min-height:50px}
+.meso-choice-label{color:#85bdf4;letter-spacing:.16em;font-size:11px;font-weight:800}
+.meso-choice-card strong{font-size:clamp(28px,3vw,36px);line-height:1.14;color:#fff}
+.meso-choice-card>.meso-choice-action{margin-top:auto;padding-top:24px;display:flex;justify-content:space-between;gap:12px;font-size:14px;font-weight:800;color:#b5ddff}
+.meso-choice-games{background:radial-gradient(circle at 90% 0%,rgba(153,107,255,.17),transparent 58%),linear-gradient(145deg,#1d1533,#101126);border-color:#513d78}
+.meso-choice-games .meso-choice-symbol,.meso-choice-games .meso-choice-label,.meso-choice-games>.meso-choice-action{color:#d1b4ff}
+.meso-choice-music{background:radial-gradient(circle at 90% 0%,rgba(177,104,211,.19),transparent 58%),linear-gradient(145deg,#281a31,#110d1b);border-color:#8b6a61}
+.meso-choice-music .meso-choice-symbol,.meso-choice-music .meso-choice-label,.meso-choice-music>.meso-choice-action{color:#ebca86}
+.meso-music-section{background:radial-gradient(ellipse at 10% 40%,rgba(111,47,154,.25),transparent 50%),linear-gradient(135deg,#070914,#171024 60%,#0b0b16);border-top:1px solid #372844;border-bottom:1px solid #372844}
+.meso-music-layout{display:grid;grid-template-columns:minmax(240px,.9fr) minmax(0,1.1fr);gap:clamp(32px,7vw,110px);align-items:center}
+.meso-music-emblem{aspect-ratio:1;max-width:400px;width:100%;margin:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;border-radius:50%;border:2px solid #b38a4e;background:radial-gradient(circle at 50% 42%,#482553,#160e26 62%,#0b0a14 78%);box-shadow:0 0 85px #713b9855,inset 0 0 45px #0009;color:#f2cf87}
+.meso-music-emblem>span{font-size:clamp(80px,12vw,150px);line-height:1;text-shadow:0 0 35px #d3a7fa}
+.meso-music-emblem small{margin-top:25px;font-size:clamp(10px,1.2vw,16px);font-weight:900;letter-spacing:.15em}
+.meso-music-orbit{position:absolute;inset:20px;border:1px solid #dfb97977;border-radius:50%;pointer-events:none}
+.meso-music-copy h2{font-size:clamp(34px,5vw,60px);line-height:1.12;color:#fff;margin:18px 0 22px}
+.meso-music-copy h2 span{color:#e7bc7d}
+.meso-music-copy p{color:#c5bcd4;line-height:1.8;font-size:16px}
+.meso-music-coming{display:inline-block;margin-top:15px;border:1px solid #af8759;border-radius:100px;padding:12px 18px;color:#efd8b0;font-weight:700;background:#8d6e3922}
+@media(max-width:800px){.meso-choice-grid{grid-template-columns:1fr}.meso-choice-card{min-height:250px}.meso-music-layout{grid-template-columns:1fr}.meso-music-emblem{max-width:280px}.meso-choice-section{padding-top:68px}}
+
 </style>
 
   <script type="application/ld+json">
@@ -69,13 +101,25 @@ html{scroll-behavior:smooth}
     </a>
     <button class="menu-button" type="button" aria-label="Navigation öffnen" aria-expanded="false" data-menu-button><i></i><i></i><i></i></button>
     <nav class="main-nav" aria-label="Hauptnavigation" data-nav>
-      <a href="#top">Startseite</a><a href="#apps">Apps</a><a href="#spiele">Spiele</a><a href="#funktionen">Life OS</a><a href="#rechtliches">Rechtliches</a><a href="#support">Support</a>
+      <a href="#top">Startseite</a><a href="#welten">Bereiche</a><a href="#apps">Apps</a><a href="#spiele">Spiele</a><a href="#music">Music Lounge</a><a href="#funktionen">Life OS</a><a href="#rechtliches">Rechtliches</a><a href="#support">Support</a>
     </nav>
     <a class="nav-cta" href="#apps">Unsere Produkte</a>
   </div>
 </header>
 
 <main id="main">
+
+<section class="meso-choice-section" id="welten" aria-labelledby="welten-title">
+  <div class="container">
+    <div class="meso-choice-heading"><span class="eyebrow">WILLKOMMEN BEI MESOFARI</span><h1 id="welten-title">Eine Welt. <span>Drei Erlebnisse.</span></h1><p>Was möchtest du heute entdecken? Wähle deinen Bereich und starte direkt.</p></div>
+    <div class="meso-choice-grid">
+      <a class="meso-choice-card meso-choice-apps" href="#apps"><span class="meso-choice-symbol" aria-hidden="true">▦</span><span class="meso-choice-label">01 / PRODUKTIVITÄT</span><strong>Apps</strong><span>Intelligente Android-Apps für Organisation, Dokumente und Schichtplanung.</span><span class="meso-choice-action">Apps entdecken <span aria-hidden="true">↗</span></span></a>
+      <a class="meso-choice-card meso-choice-games" href="#spiele"><span class="meso-choice-symbol" aria-hidden="true">✦</span><span class="meso-choice-label">02 / ENTERTAINMENT</span><strong>Spiele</strong><span>Entdecke unsere mobilen Spiele und fantasievollen Spielwelten.</span><span class="meso-choice-action">Spiele entdecken <span aria-hidden="true">↗</span></span></a>
+      <a class="meso-choice-card meso-choice-music" href="#music"><span class="meso-choice-symbol" aria-hidden="true">♫</span><span class="meso-choice-label">03 / COMMUNITY</span><strong>Kai Music Lounge</strong><span>Musikthemen, Song-Einreichungen und gemeinsame Live-Abende.</span><span class="meso-choice-action">Music Lounge entdecken <span aria-hidden="true">↗</span></span></a>
+    </div>
+  </div>
+</section>
+
 <section class="hero" id="top">
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="container hero-grid">
@@ -190,6 +234,14 @@ html{scroll-behavior:smooth}
       <figure><img loading="lazy" src="zuckervyx-welt-schokoladental.webp" alt="Fantasiewelt Schokoladental mit Süßigkeitenbergen" /><figcaption>Schokoladental</figcaption></figure>
       <figure><img loading="lazy" src="zuckervyx-welt-eiscreme.webp" alt="Eisige Candy-Welt Eiscreme-Gipfel" /><figcaption>Eiscreme-Gipfel</figcaption></figure>
     </div>
+  </div>
+</section>
+
+
+<section class="meso-music-section section" id="music" aria-labelledby="music-title">
+  <div class="container meso-music-layout">
+    <div class="meso-music-emblem" aria-hidden="true"><div class="meso-music-orbit"></div><span>♫</span><small>KAI MUSIC LOUNGE</small></div>
+    <div class="meso-music-copy"><span class="eyebrow">NEU BEI MESOFARI · MUSIK & COMMUNITY</span><h2 id="music-title">Dein Song.<br><span>Unsere Bühne.</span></h2><p>Willkommen in der Kai Music Lounge! Hier entsteht unsere Community für Themenabende, Live-Musik und eure eigenen Songs.</p><p>Der Song Manager mit Einreichung, Terminen und öffentlicher Warteliste wird vorbereitet. Sobald er freigeschaltet ist, findest du den Zugang hier.</p><span class="meso-music-coming">Song-Einreichungen werden vorbereitet</span></div>
   </div>
 </section>
 
