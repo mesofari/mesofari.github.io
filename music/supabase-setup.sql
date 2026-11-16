@@ -77,18 +77,25 @@ end $$;
 drop trigger if exists lounge_new_user on auth.users;
 create trigger lounge_new_user after insert on auth.users
 for each row execute function public.lounge_create_profile();
--- Server awards XP exactly once for the first submission to an event.
+-- XP is awarded once ONLY after admin approval, never for unreviewed spam.
 create or replace function public.lounge_award_song_xp()
 returns trigger language plpgsql security definer set search_path = ''
 as $$
+declare added integer;
 begin
- insert into public.lounge_xp_ledger(user_id,source,source_id,xp_delta)
- values(new.user_id,'song',new.id,10);
- update public.lounge_profiles set xp=xp+10 where user_id=new.user_id;
+ if new.status = 'approved' and old.status = 'pending' then
+   insert into public.lounge_xp_ledger(user_id,source,source_id,xp_delta)
+   values(new.user_id,'song',new.id,10)
+   on conflict(source,source_id) do nothing;
+   get diagnostics added = row_count;
+   if added > 0 then
+      update public.lounge_profiles set xp=xp+10 where user_id=new.user_id;
+   end if;
+ end if;
  return new;
 end $$;
 drop trigger if exists lounge_song_xp on public.lounge_songs;
-create trigger lounge_song_xp after insert on public.lounge_songs
+create trigger lounge_song_xp after update of status on public.lounge_songs
 for each row execute function public.lounge_award_song_xp();
 -- Verify event is open and capacity available. Locks the event row for
 -- serialization so two concurrent submissions cannot exceed its capacity.
@@ -169,3 +176,21 @@ revoke execute on function public.lounge_award_song_xp() from public,anon,authen
 revoke execute on function public.lounge_check_submission() from public,anon,authenticated;
 -- SECURITY: set up protected admin event approval/status operations separately.
 -- NO service-role key in public website. No admin privileges derived from user metadata.
+
+-- Member display names are public, but anonymous generated nicknames are
+-- used until member chooses one. No public emails, bank data or stories.
+create or replace function public.lounge_set_display_name(p_name text)
+returns void language plpgsql security definer set search_path = ''
+as $$
+begin
+ if auth.uid() is null then raise exception 'Not signed in'; end if;
+ if p_name is null or char_length(trim(p_name)) < 2 or char_length(trim(p_name)) > 40
+    or trim(p_name) ~ '[<>]' then
+    raise exception 'Ungültiger Community-Name';
+ end if;
+ update public.lounge_profiles set display_name=trim(p_name) where user_id=auth.uid();
+end $$;
+revoke execute on function public.lounge_set_display_name(text) from public,anon;
+grant execute on function public.lounge_set_display_name(text) to authenticated;
+-- Public read rights are intentional for ranking. Prevent clients from
+-- editing points or claiming a different display name.
