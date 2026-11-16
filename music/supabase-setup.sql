@@ -39,7 +39,7 @@ create table if not exists public.lounge_xp_ledger (
 create table if not exists public.lounge_supports (
  id uuid primary key default gen_random_uuid(),
  user_id uuid not null references auth.users(id) on delete cascade,
- amount_cents bigint not null check(amount_cents > 0),
+ amount_cents bigint not null check(amount_cents in (100,200,500,1000,2000,5000,10000,50000,100000)),
  transfer_reference text not null unique,
  verified_at timestamptz not null default now(),
  verified_by uuid,
@@ -118,7 +118,7 @@ drop trigger if exists lounge_validate_submission on public.lounge_songs;
 create trigger lounge_validate_submission before insert on public.lounge_songs
 for each row execute function public.lounge_check_submission();
 -- Service role ONLY after manually checking N26 incoming transactions.
--- Fractional amounts are floored to whole EUR, e.g. 1.99 EUR => 1 XP.
+-- Exactly nine whole-euro presets are valid; confirmed N26 transfer only.
 -- idempotency via unique transfer_reference. No public payment-success endpoint.
 create or replace function public.lounge_confirm_support(
  p_user_id uuid, p_amount_cents bigint, p_transfer_reference text, p_verified_by uuid default null
@@ -127,7 +127,7 @@ as $$
 declare v_id uuid; v_xp bigint;
 begin
  if auth.role() <> 'service_role' then raise exception 'Service only'; end if;
- if p_user_id is null or p_amount_cents <= 0 or char_length(trim(p_transfer_reference)) < 5 then
+ if p_user_id is null or p_amount_cents not in (100,200,500,1000,2000,5000,10000,50000,100000) or char_length(trim(p_transfer_reference)) < 5 then
    raise exception 'Invalid verified transfer'; end if;
  v_xp := p_amount_cents / 100;
  insert into public.lounge_supports(user_id,amount_cents,transfer_reference,verified_by,xp_awarded)
