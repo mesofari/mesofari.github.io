@@ -32,6 +32,15 @@ for(const [i,s] of data.entries()){const row=node('div','queue-row');row.append(
 el('queue-event').addEventListener('change',loadQueue);el('refresh-queue').addEventListener('click',loadQueue);
 el('song-form').addEventListener('submit',async e=>{e.preventDefault();if(!user){feedback('Bitte melde dich zuerst an.',true);return}const event_id=el('event-select').value;const title=el('song-title').value.trim(),song_url=el('song-url').value.trim(),story=el('song-story').value.trim();if(!event_id||!events.some(x=>x.id===event_id&&x.submissions_open)){feedback('Dieser Themenabend ist nicht für Einreichungen geöffnet.',true);return}
 if(!/^https:\/\/\S+$/i.test(song_url)){feedback('Bitte einen vollständigen HTTPS-Link eingeben.',true);return}
-el('send-song').disabled=true;feedback('Einreichung wird gespeichert …');const {error}=await db.from('lounge_songs').insert({event_id,user_id:user.id,title,song_url,story});if(error){feedback(error.code==='23505'?'Du hast für diesen Abend bereits einen Song eingereicht.':'Einreichung fehlgeschlagen: '+error.message,true)}else{feedback('Dein Song ist eingegangen! Kai prüft ihn. Nach Freigabe erhältst du +10 XP.');el('song-form').reset()}el('send-song').disabled=false});
+el('send-song').disabled=true;feedback('Einreichung wird gespeichert …');const {error}=await db.from('lounge_songs').insert({event_id,user_id:user.id,title,song_url,story});if(error){
+ let message='Dein Song konnte gerade nicht gespeichert werden. Bitte versuche es erneut. Deine Eingaben bleiben erhalten.';
+ if(error.code==='23505')message='Für diesen Themenabend hast du bereits einen Song eingereicht.';
+ else if(error.code==='23514')message='Bitte überprüfe den Songlink: Er muss mit https:// beginnen und darf keine Leerzeichen enthalten.';
+ else if(/Einreichungen geschlossen/i.test(error.message||''))message='Die Song-Einreichung für diesen Themenabend ist geschlossen.';
+ else if(/Songplätze belegt/i.test(error.message||''))message='Für diesen Themenabend sind leider alle Songplätze belegt.';
+ else if(error.code==='42501')message='Du bist nicht zur Einreichung angemeldet. Bitte melde dich erneut an.';
+ feedback(message,true);
+ console.error('Song submission error',error.code,error.message);
+}else{feedback('Vielen Dank! Dein Song wurde erfolgreich eingereicht und wartet auf Freigabe. Nach Freigabe erhältst du +10 XP.');el('song-form').reset()}el('send-song').disabled=false});
 await refreshAuth();await loadEvents();timer=setInterval(loadQueue,30000);db.auth.onAuthStateChange(()=>{setTimeout(refreshAuth,0)});
 </script></body></html>
