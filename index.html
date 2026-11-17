@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MESOFARI – Apps & Spiele für Android | Life OS, Scan, SHIFT & Candy Snake-ZUCKERVYX</title>
-  <meta name="description" content="MESOFARI entwickelt Apps und Spiele für Android: Life OS, Scan by MESOFARI und MESOFARI SHIFT sind bei Google Play erhältlich. Candy Snake-ZUCKERVYX ist in Vorbereitung." />
+  <title>MESOFARI – Apps, Spiele & Kai Music Lounge</title>
+  <meta name="description" content="MESOFARI verbindet Android-Apps, mobile Spiele und die Kai Music Lounge mit Themenabenden und Musik-Community." />
   <meta name="theme-color" content="#030812" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://www.mesofari.de/" />
@@ -53,6 +53,84 @@ html{scroll-behavior:smooth}
 @media (max-width:1020px){.meso-product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.meso-game-feature{grid-template-columns:1fr}.meso-game-image{min-height:240px}.meso-games-head{align-items:flex-start}}
 @media (max-width:700px){.meso-product-grid,.meso-worlds{grid-template-columns:1fr}.meso-games-head{flex-direction:column}.meso-product-art{height:195px}.meso-game-image{min-height:205px}.meso-worlds img{aspect-ratio:2.3}.meso-game-info{padding:24px}.meso-game-info h3{font-size:26px}.meso-status{align-self:flex-start}.meso-catalog,.meso-games{padding-block:60px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.meso-product{transition:none}.meso-product:hover{transform:none}}
+
+/* MESOFARI Drei-Welten-Start und Kai Music Lounge – additive Styles */
+#welten,#music{scroll-margin-top:100px}
+.meso-choice-section{position:relative;padding:clamp(72px,9vw,126px) 0 80px;background:radial-gradient(ellipse at 80% 0%,rgba(39,87,169,.18),transparent 55%),#050914;color:#f7faff}
+.meso-choice-heading{text-align:center;max-width:760px;margin:0 auto 42px}
+.meso-choice-heading h1{font-size:clamp(36px,5.5vw,66px);letter-spacing:-.045em;line-height:1.12;margin:14px 0 18px;color:#fff}
+.meso-choice-heading h1 span{color:#8ac6ff}
+.meso-choice-heading p{color:#adbed4;font-size:clamp(15px,2vw,19px);line-height:1.65}
+.meso-choice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.meso-choice-card{display:flex;flex-direction:column;gap:13px;min-height:340px;padding:30px;border:1px solid #2b496d;border-radius:24px;background:radial-gradient(circle at 90% 0%,rgba(46,148,244,.18),transparent 58%),linear-gradient(145deg,#10213a,#091426);color:#d0deef;text-decoration:none;transition:transform .2s,border-color .2s,box-shadow .2s}
+.meso-choice-card:hover,.meso-choice-card:focus-visible{transform:translateY(-5px);border-color:#7ebdff;box-shadow:0 22px 60px rgba(0,0,0,.24)}
+.meso-choice-card:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.meso-choice-symbol{font-size:43px;line-height:1;color:#8ccaff;min-height:50px}
+.meso-choice-label{color:#85bdf4;letter-spacing:.16em;font-size:11px;font-weight:800}
+.meso-choice-card strong{font-size:clamp(28px,3vw,36px);line-height:1.14;color:#fff}
+.meso-choice-card>.meso-choice-action{margin-top:auto;padding-top:24px;display:flex;justify-content:space-between;gap:12px;font-size:14px;font-weight:800;color:#b5ddff}
+.meso-choice-games{background:radial-gradient(circle at 90% 0%,rgba(153,107,255,.17),transparent 58%),linear-gradient(145deg,#1d1533,#101126);border-color:#513d78}
+.meso-choice-games .meso-choice-symbol,.meso-choice-games .meso-choice-label,.meso-choice-games>.meso-choice-action{color:#d1b4ff}
+.meso-choice-music{background:radial-gradient(circle at 90% 0%,rgba(177,104,211,.19),transparent 58%),linear-gradient(145deg,#281a31,#110d1b);border-color:#8b6a61}
+.meso-choice-music .meso-choice-symbol,.meso-choice-music .meso-choice-label,.meso-choice-music>.meso-choice-action{color:#ebca86}
+.meso-music-section{background:radial-gradient(ellipse at 10% 40%,rgba(111,47,154,.25),transparent 50%),linear-gradient(135deg,#070914,#171024 60%,#0b0b16);border-top:1px solid #372844;border-bottom:1px solid #372844}
+.meso-music-layout{display:grid;grid-template-columns:minmax(240px,.9fr) minmax(0,1.1fr);gap:clamp(32px,7vw,110px);align-items:center}
+.meso-music-emblem{aspect-ratio:1;max-width:400px;width:100%;margin:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;border-radius:50%;border:2px solid #b38a4e;background:radial-gradient(circle at 50% 42%,#482553,#160e26 62%,#0b0a14 78%);box-shadow:0 0 85px #713b9855,inset 0 0 45px #0009;color:#f2cf87}
+.meso-music-emblem>span{font-size:clamp(80px,12vw,150px);line-height:1;text-shadow:0 0 35px #d3a7fa}
+.meso-music-emblem small{margin-top:25px;font-size:clamp(10px,1.2vw,16px);font-weight:900;letter-spacing:.15em}
+.meso-music-orbit{position:absolute;inset:20px;border:1px solid #dfb97977;border-radius:50%;pointer-events:none}
+.meso-music-copy h2{font-size:clamp(34px,5vw,60px);line-height:1.12;color:#fff;margin:18px 0 22px}
+.meso-music-copy h2 span{color:#e7bc7d}
+.meso-music-copy p{color:#c5bcd4;line-height:1.8;font-size:16px}
+.meso-music-coming{display:inline-block;margin-top:15px;border:1px solid #af8759;border-radius:100px;padding:12px 18px;color:#efd8b0;font-weight:700;background:#8d6e3922}
+@media(max-width:800px){.meso-choice-grid{grid-template-columns:1fr}.meso-choice-card{min-height:250px}.meso-music-layout{grid-template-columns:1fr}.meso-music-emblem{max-width:280px}.meso-choice-section{padding-top:68px}}
+
+
+/* Transparente, nicht-priorisierende Community-Unterstützung */
+.meso-support-wrap{padding-top:clamp(40px,6vw,80px)}
+.meso-support-card{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(265px,.85fr);gap:clamp(22px,4vw,55px);padding:clamp(22px,4vw,50px);background:linear-gradient(115deg,rgba(26,18,38,.94),rgba(33,21,42,.82));border:1px solid rgba(207,170,111,.42);border-radius:27px;box-shadow:0 16px 60px #0004}
+.meso-support-kicker{color:#edc789;font-size:11px;letter-spacing:.14em;font-weight:800}
+.meso-support-main h3{font-size:clamp(26px,3vw,39px);line-height:1.18;color:#fff;margin:15px 0 17px}
+.meso-support-main p,.meso-support-thanks p{color:#d6c9dc;line-height:1.75;margin:0 0 20px}
+.meso-support-goals{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:0;margin:27px 0;gap:15px}
+.meso-support-goals li{display:flex;gap:11px;align-items:center;font-weight:700;color:#f8e7cb}
+.meso-support-goals li span{color:#dcb47d;font-size:20px}
+.meso-support-main .meso-support-fair{font-size:14px;border-left:3px solid #e5bf83;padding:10px 0 10px 16px;margin:0;background:#fff1}
+.meso-support-thanks{align-self:stretch;background:linear-gradient(165deg,#392442,#21172e);border-radius:20px;padding:clamp(22px,3vw,34px);border:1px solid #936d7755}
+.meso-support-heart{font-size:42px;color:#f0c48e}
+.meso-support-thanks h4{font-size:clamp(22px,2.5vw,29px);color:#fff;margin:12px 0 14px}
+.meso-support-notice{border:1px solid #aa8c5a;border-radius:14px;background:#9f7c3020;padding:15px;color:#f9dfb5;font-size:14px;line-height:1.55;margin-bottom:20px}
+.meso-support-thanks .meso-support-small{font-size:12px;color:#bbaec5;margin:0}
+@media(max-width:850px){.meso-support-card{grid-template-columns:1fr}.meso-support-goals{grid-template-columns:1fr}}
+
+
+.meso-transfer{padding:17px;border:1px solid #aa8c5a;border-radius:16px;background:#0d0b18a8;margin-bottom:16px}
+.meso-transfer-caption{display:block;font-size:14px;font-weight:800;color:#efcb8e;margin-bottom:14px}
+.meso-transfer-label{display:block;font-size:12px;color:#dbcbda;font-weight:700;margin:12px 0 7px}
+.meso-transfer-inputline{display:flex;align-items:stretch;gap:7px;min-width:0}
+.meso-transfer-inputline input,.meso-transfer-purpose{display:block;flex:1;min-width:0;width:100%;border:1px solid #63516b;border-radius:8px;background:#181321;padding:11px;font-size:13px;line-height:1.4;color:#fff;overflow-wrap:anywhere}
+.meso-transfer-purpose{width:auto}
+.meso-copy-support{flex-shrink:0;border:1px solid #d8ae70;border-radius:8px;padding:8px 11px;color:#211422;background:#ecc78f;cursor:pointer;font-size:12px;font-weight:800}
+.meso-copy-support:hover{background:#fff0ce}
+.meso-copy-support:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.meso-support-thanks .meso-transfer-help,.meso-support-thanks .meso-transfer-thanks{font-size:12px;line-height:1.6;margin:12px 0;color:#c6b9ce}
+.meso-transfer-thanks a{color:#edcb98;text-decoration:underline}
+@media(max-width:520px){.meso-transfer-inputline{flex-wrap:wrap}.meso-copy-support{min-height:40px}}
+
+.meso-transfer-owner{display:block;font-size:17px;font-weight:800;color:#fff;padding:0 0 3px}.meso-transfer-cardname{color:#eacb9b;font-size:13px}
+.meso-music-progress-note{color:#e7c99e;font-size:13px;margin:15px 0}.meso-music-copy a.meso-music-coming{text-decoration:none}.meso-music-copy a.meso-music-coming:hover{background:#cf9d4b33}
+
+.meso-amount-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0 16px}
+.meso-amount-btn{appearance:none;padding:12px 7px;border:1px solid #846b84;border-radius:12px;background:#2d2037;color:#f5e5fc;font-weight:800;cursor:pointer;transition:background .15s,border-color .15s,transform .15s}
+.meso-amount-btn:hover{background:#493050;border-color:#e0c089}
+.meso-amount-btn.is-selected,.meso-amount-btn[aria-pressed="true"]{color:#251323;background:#f2ce96;border-color:#fff0d3;box-shadow:0 0 0 2px #c2955770}
+.meso-amount-btn:focus-visible,.meso-copy-amount:focus-visible{outline:3px solid white;outline-offset:2px}
+.meso-selection-summary{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#19111e;border:1px solid #705c70;padding:14px;border-radius:12px}
+.meso-selection-summary div{display:flex;flex-direction:column;gap:4px}
+.meso-selection-summary span{font-size:11px;color:#c6b1d4}
+.meso-selection-summary strong{font-size:20px;color:#f5d49f}
+.meso-copy-amount{width:100%;margin:12px 0 3px;padding:11px;border:1px solid #d8b27d;border-radius:10px;background:#543854;color:#fff0d3;font-weight:800;cursor:pointer}
+@media(max-width:410px){.meso-amount-btn{font-size:13px}.meso-selection-summary strong{font-size:17px}}
 </style>
 
   <script type="application/ld+json">
@@ -69,13 +147,25 @@ html{scroll-behavior:smooth}
     </a>
     <button class="menu-button" type="button" aria-label="Navigation öffnen" aria-expanded="false" data-menu-button><i></i><i></i><i></i></button>
     <nav class="main-nav" aria-label="Hauptnavigation" data-nav>
-      <a href="#top">Startseite</a><a href="#apps">Apps</a><a href="#spiele">Spiele</a><a href="#funktionen">Life OS</a><a href="#rechtliches">Rechtliches</a><a href="#support">Support</a>
+      <a href="#top">Startseite</a><a href="#welten">Bereiche</a><a href="#apps">Apps</a><a href="#spiele">Spiele</a><a href="#music">Music Lounge</a><a href="#funktionen">Life OS</a><a href="#rechtliches">Rechtliches</a><a href="#support">Support</a>
     </nav>
     <a class="nav-cta" href="#apps">Unsere Produkte</a>
   </div>
 </header>
 
 <main id="main">
+
+<section class="meso-choice-section" id="welten" aria-labelledby="welten-title">
+  <div class="container">
+    <div class="meso-choice-heading"><span class="eyebrow">WILLKOMMEN BEI MESOFARI</span><h1 id="welten-title">Eine Welt. <span>Drei Erlebnisse.</span></h1><p>Was möchtest du heute entdecken? Wähle deinen Bereich und starte direkt.</p></div>
+    <div class="meso-choice-grid">
+      <a class="meso-choice-card meso-choice-apps" href="#apps"><span class="meso-choice-symbol" aria-hidden="true">▦</span><span class="meso-choice-label">01 / PRODUKTIVITÄT</span><strong>Apps</strong><span>Intelligente Android-Apps für Organisation, Dokumente und Schichtplanung.</span><span class="meso-choice-action">Apps entdecken <span aria-hidden="true">↗</span></span></a>
+      <a class="meso-choice-card meso-choice-games" href="#spiele"><span class="meso-choice-symbol" aria-hidden="true">✦</span><span class="meso-choice-label">02 / ENTERTAINMENT</span><strong>Spiele</strong><span>Entdecke unsere mobilen Spiele und fantasievollen Spielwelten.</span><span class="meso-choice-action">Spiele entdecken <span aria-hidden="true">↗</span></span></a>
+      <a class="meso-choice-card meso-choice-music" href="#music"><span class="meso-choice-symbol" aria-hidden="true">♫</span><span class="meso-choice-label">03 / COMMUNITY</span><strong>Kai Music Lounge</strong><span>Musikthemen, Song-Einreichungen und gemeinsame Live-Abende.</span><span class="meso-choice-action">Music Lounge entdecken <span aria-hidden="true">↗</span></span></a>
+    </div>
+  </div>
+</section>
+
 <section class="hero" id="top">
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="container hero-grid">
@@ -193,6 +283,66 @@ html{scroll-behavior:smooth}
   </div>
 </section>
 
+
+<section class="meso-music-section section" id="music" aria-labelledby="music-title">
+  <div class="container meso-music-layout">
+    <div class="meso-music-emblem" aria-hidden="true"><div class="meso-music-orbit"></div><span>♫</span><small>KAI MUSIC LOUNGE</small></div>
+    <div class="meso-music-copy"><span class="eyebrow">NEU BEI MESOFARI · MUSIK & COMMUNITY</span><h2 id="music-title">Dein Song.<br><span>Unsere Bühne.</span></h2><p>Willkommen in der Kai Music Lounge! Hier entsteht unsere Community für Themenabende, Live-Musik und eure eigenen Songs.</p><p>Entdecke kommende Themenabende, reiche eigene Songlinks und Geschichten ein und verfolge die faire öffentliche Warteliste. Registrierte Community-Mitglieder sammeln XP bis Level 50.</p><a class="meso-music-coming" href="music/">Community-Mitglieder &amp; Level ansehen →</a><p class="meso-music-progress-note">Community-Mitglieder · Level 1–50 · XP für freigegebene Songs und bestätigte Unterstützungen</p><p class="meso-music-progress-note"><a href="music/datenschutz.html">Datenschutz Music Lounge</a> · <a href="music/teilnahmebedingungen.html">Community-Regeln</a> · <a href="music/community-melden.html">Inhalt melden</a></p><a class="meso-music-coming" href="music/events.html">Themenabende &amp; Song-Einreichung →</a> <a class="meso-music-coming" href="music/admin.html">Admin-Dashboard →</a></div>
+  </div>
+  <div class="container meso-support-wrap">
+    <div class="meso-support-card">
+      <div class="meso-support-main">
+        <span class="meso-support-kicker">FREIWILLIGE COMMUNITY-UNTERSTÜTZUNG</span>
+        <h3>Gemeinsam machen wir die Lounge noch besser.</h3>
+        <p>Unsere Musikabende leben von euren Songs, Ideen und eurer Begeisterung. Wenn du die Community unterstützen möchtest, hilfst du uns dabei, nach und nach bessere Technik und Programme für unsere Lives zu finanzieren.</p>
+        <ul class="meso-support-goals">
+          <li><span aria-hidden="true">◉</span> Kamera &amp; Bildqualität</li>
+          <li><span aria-hidden="true">♫</span> Mikrofon &amp; Audio</li>
+          <li><span aria-hidden="true">▣</span> Stream Deck, OBS &amp; Software</li>
+          <li><span aria-hidden="true">✧</span> Community-Aktionen</li>
+        </ul>
+        <p class="meso-support-fair"><strong>Wichtig:</strong> Jede Song-Einreichung ist kostenlos. Eine Unterstützung verändert weder die Warteschlange noch die Chancen auf eine Wiedergabe. Es gibt keine VIP-Pflicht und keinen Kaufvorteil.</p>
+      </div>
+      <aside class="meso-support-thanks">
+        <span aria-hidden="true" class="meso-support-heart">♥</span>
+        <h4>Danke, dass du dabei bist!</h4>
+        <p>Wer uns freiwillig unterstützt, kann auf Wunsch im Live persönlich mit dem angegebenen Namen erwähnt werden. Natürlich geht das auch ganz anonym.</p>
+        <div class="meso-transfer" aria-label="Bankdaten für freiwillige Community-Unterstützung">
+          <span class="meso-transfer-caption">Freiwillig per SEPA-Überweisung unterstützen</span>
+          <div class="meso-amount-picker" role="group" aria-label="Unterstützungsbetrag auswählen">
+            <span class="meso-transfer-label">Wähle einen Betrag – keine Centbeträge</span>
+            <div class="meso-amount-grid">
+              <button type="button" class="meso-amount-btn" data-support-amount="1" aria-pressed="false">1 €</button>
+              <button type="button" class="meso-amount-btn" data-support-amount="2" aria-pressed="false">2 €</button>
+              <button type="button" class="meso-amount-btn" data-support-amount="5" aria-pressed="false">5 €</button>
+              <button type="button" class="meso-amount-btn is-selected" data-support-amount="10" aria-pressed="true">10 €</button>
+              <button type="button" class="meso-amount-btn" data-support-amount="20" aria-pressed="false">20 €</button>
+              <button type="button" class="meso-amount-btn" data-support-amount="50" aria-pressed="false">50 €</button>
+              <button type="button" class="meso-amount-btn" data-support-amount="100" aria-pressed="false">100 €</button>
+              <button type="button" class="meso-amount-btn" data-support-amount="500" aria-pressed="false">500 €</button>
+              <button type="button" class="meso-amount-btn" data-support-amount="1000" aria-pressed="false">1.000 €</button>
+            </div>
+            <div class="meso-selection-summary" aria-live="polite">
+              <div><span>Ausgewählt</span><strong id="meso-selected-amount">10,00 €</strong></div>
+              <div><span>Nach Zahlungseingang</span><strong id="meso-selected-xp">+10 XP</strong></div>
+            </div>
+            <button type="button" class="meso-copy-amount" data-copy-text="10,00" id="meso-copy-amount">Betrag für Überweisung kopieren</button>
+            <p class="meso-transfer-help">Dies ist kein Online-Bezahlvorgang. Überweise den ausgewählten Betrag selbst in deiner Banking-App. Die Auswahl allein löst keine Zahlung und keine XP-Gutschrift aus.</p>
+          </div>
+          <span class="meso-transfer-label">Kontoinhaber (laut deinen Angaben)</span><strong class="meso-transfer-owner">Kai Detlef Hahn</strong><span class="meso-transfer-label">Kartenbezeichnung</span><span class="meso-transfer-cardname">MESOFARI</span>
+          <label class="meso-transfer-label" for="meso-support-iban">N26 Geschäftskonto · IBAN</label>
+          <div class="meso-transfer-inputline"><input id="meso-support-iban" type="text" value="DE68 1001 1001 2294 8592 19" readonly aria-label="IBAN für Community-Unterstützung"><button type="button" class="meso-copy-support" data-copy-text="DE68100110012294859219" aria-label="IBAN kopieren">Kopieren</button></div>
+          <span class="meso-transfer-label">Verwendungszweck</span>
+          <div class="meso-transfer-inputline"><span class="meso-transfer-purpose">Kai Music Lounge – Unterstützung</span><button type="button" class="meso-copy-support" data-copy-text="Kai Music Lounge - Unterstuetzung" aria-label="Verwendungszweck kopieren">Kopieren</button></div>
+          <p class="meso-transfer-help">Für eine automatische Zuordnung deiner XP registriere dich zunächst in der <a href="music/#profil">Community</a> und nutze anschließend deinen persönlichen Verwendungszweck aus deinem Profil. Es sind nur die neun angezeigten Beträge für das Community-XP-System vorgesehen. Kontoinhaber: Kai Detlef Hahn (vom Betreiber bestätigt). Bitte prüfe vor der Überweisung, welcher Empfängername von deiner Bank akzeptiert wird. Es gibt keinen automatischen Zahlungsabgleich auf dieser Website.</p>
+        </div>
+        <p class="meso-transfer-thanks">Möchtest du im Live namentlich erwähnt werden? Schreib uns deinen gewünschten Community-Namen separat an <a href="mailto:support@mesofari.de?subject=Kai%20Music%20Lounge%20%E2%80%93%20Dankesch%C3%B6n">support@mesofari.de</a> und teile ausdrücklich mit, dass wir ihn öffentlich nennen dürfen. Ohne Zustimmung erfolgt keine namentliche Erwähnung.</p>
+        <p class="meso-support-small">Freiwillige Unterstützung ohne Gegenleistung; keine steuerlich absetzbare gemeinnützige Spende.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
 <section id="release" class="release-section">
   <div class="container release-card reveal"><div class="play-mark" aria-hidden="true">▶</div><div><span class="eyebrow">JETZT FÜR ANDROID ERHÄLTLICH</span><h2>Unsere drei Apps sind bei Google Play!</h2><p><strong>MESOFARI Life OS</strong> hilft beim Organisieren des Alltags. <strong>Scan by MESOFARI</strong> macht Dokumente digital. <strong>MESOFARI SHIFT</strong> hilft bei der Schichtplanung. Unser erstes Spiel <strong>Candy Snake-ZUCKERVYX</strong> folgt nach der Veröffentlichungsvorbereitung.</p><p>Die jeweils aktuellen App-Preise findest du bei Google Play. Für das Spiel sind optionale In-App-Käufe geplant.</p></div><a class="btn primary" href="#apps">Alle Apps ansehen <span aria-hidden="true">→</span></a></div>
 </section>
@@ -263,5 +413,44 @@ html{scroll-behavior:smooth}
 
 <div class="lightbox" data-lightbox-modal aria-hidden="true"><button aria-label="Schließen" data-lightbox-close>×</button><img src="" alt="Vergrößerte MESOFARI Ansicht" data-lightbox-image></div>
 <script src="script.js"></script>
-</body>
+<script>
+document.addEventListener('click',async function(event){
+  const button=event.target.closest('[data-copy-text]');
+  if(!button)return;
+  const value=button.getAttribute('data-copy-text');
+  const previous=button.textContent;
+  try {
+    if(navigator.clipboard && window.isSecureContext){await navigator.clipboard.writeText(value);}
+    else {
+      const temporary=document.createElement('textarea');
+      temporary.value=value;temporary.style.position='fixed';temporary.style.opacity='0';
+      document.body.appendChild(temporary);temporary.select();
+      const ok=document.execCommand('copy');temporary.remove();
+      if(!ok)throw new Error('Copy unavailable');
+    }
+    button.textContent='Kopiert ✓';
+    button.setAttribute('aria-label','In Zwischenablage kopiert');
+  } catch(e) {button.textContent='Bitte markieren';button.setAttribute('aria-label','Bitte Text manuell kopieren');}
+  window.setTimeout(function(){button.textContent=previous;button.removeAttribute('aria-label');},2200);
+});
+</script>
+<script>
+(function(){
+  const amounts=new Set([1,2,5,10,20,50,100,500,1000]);
+  const buttons=[...document.querySelectorAll('[data-support-amount]')];
+  const amountLabel=document.getElementById('meso-selected-amount');
+  const xpLabel=document.getElementById('meso-selected-xp');
+  const copyButton=document.getElementById('meso-copy-amount');
+  if(!buttons.length||!amountLabel||!xpLabel||!copyButton)return;
+  const format=new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR'});
+  buttons.forEach(button=>button.addEventListener('click',function(){
+    const amount=Number(this.dataset.supportAmount);
+    if(!amounts.has(amount))return;
+    buttons.forEach(b=>{const active=b===this;b.classList.toggle('is-selected',active);b.setAttribute('aria-pressed',String(active))});
+    amountLabel.textContent=format.format(amount);
+    xpLabel.textContent='+'+amount.toLocaleString('de-DE')+' XP';
+    copyButton.dataset.copyText=amount.toFixed(2).replace('.',',');
+  }));
+})();
+</script></body>
 </html>
