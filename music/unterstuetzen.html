@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#140a1c"><meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Freiwillige Unterstützung | Kai Music Lounge</title><meta name="description" content="Hilf Kai Music Lounge mit einer freiwilligen Unterstützung beim Ausbau der Musik-Community. Feste Beträge per SEPA-Überweisung und XP für bestätigte Zahlungen.">
+<link rel="stylesheet" href="lounge.css"></head><body>
+<header class="top wrap"><a class="brand" href="./"><span class="brand-mark">♛</span><span>KAI <b>MUSIC LOUNGE</b></span></a><nav aria-label="Hauptnavigation"><a href="./">Willkommen</a><a href="events.html">Themenabende</a><a href="community.html">Community</a><a href="unterstuetzen.html" aria-current="page">Unterstützen</a></nav></header>
+<main class="wrap">
+<section class="support-hero"><span class="kicker">DANKE, DASS DU TEIL DAVON BIST</span><div class="support-heart">♥</div><h1>Gemeinsam wächst<br><em>unsere Musik-Community.</em></h1>
+<p>Jeder Song, jede Geschichte und jeder Mensch macht diese Lounge besonders. Wenn du unsere gemeinsamen Abende freiwillig unterstützen möchtest, hilfst du uns dabei, unsere Technik und die Möglichkeiten für euch weiterzuentwickeln. Auch ohne Beitrag bist du bei uns genauso willkommen.</p>
+<a class="outline-button" href="community.html">Zurück zu unserer Community</a></section>
+<section class="support-why"><div class="support-why-card"><span aria-hidden="true">📷</span><strong>Kamera &amp; Bild</strong><p>Klarere Bilder in unseren gemeinsamen Lives.</p></div><div class="support-why-card"><span aria-hidden="true">🎙️</span><strong>Audio &amp; Gesang</strong><p>Besserer Ton und ein angenehmes Musikerlebnis.</p></div><div class="support-why-card"><span aria-hidden="true">🎛️</span><strong>Stream Deck &amp; OBS</strong><p>Mehr Möglichkeiten für die Liveshow.</p></div><div class="support-why-card"><span aria-hidden="true">✨</span><strong>Programme</strong><p>Neue kreative Ideen und Community-Aktionen.</p></div></section>
+<section class="support-layout" id="betrag"><div class="panel support-payment"><span class="kicker">FREIWILLIGE UNTERSTÜTZUNG</span><h2>Wähle deinen Betrag</h2><p class="muted">Neun feste Eurobeträge, ohne Centauswahl. Ein Klick bereitet deine Überweisungsdaten vor – es wird dadurch <strong>noch kein Geld gesendet</strong>.</p>
+<div id="amount-grid" class="amount-grid" role="group" aria-label="Eurobetrag wählen">
+<button type="button" data-eur="1" aria-pressed="false">1 €</button><button type="button" data-eur="2" aria-pressed="false">2 €</button><button type="button" data-eur="5" aria-pressed="false">5 €</button>
+<button type="button" data-eur="10" aria-pressed="true" class="selected">10 €</button><button type="button" data-eur="20" aria-pressed="false">20 €</button><button type="button" data-eur="50" aria-pressed="false">50 €</button>
+<button type="button" data-eur="100" aria-pressed="false">100 €</button><button type="button" data-eur="500" aria-pressed="false">500 €</button><button type="button" data-eur="1000" aria-pressed="false">1.000 €</button></div>
+<div class="selected-support" aria-live="polite"><div><span>Dein Betrag</span><strong id="chosen-eur">10 €</strong></div><div><span>Nach bestätigter Überweisung</span><strong id="chosen-xp">+10 XP</strong></div></div>
+<h3>Überweisungsdaten</h3><div class="bank-field"><label>Empfänger</label><div><strong id="account-owner">Kai Detlef Hahn</strong><button type="button" class="copy-bank" data-copy="Kai Detlef Hahn">Kopieren</button></div></div>
+<div class="bank-field"><label>N26 Geschäftskonto · IBAN</label><div><strong id="bank-iban">DE68 1001 1001 2294 8592 19</strong><button type="button" class="copy-bank" data-copy="DE68100110012294859219">IBAN kopieren</button></div></div>
+<div class="bank-field"><label>Verwendungszweck für deine Community-XP</label><div><strong id="transfer-purpose">Kai Music Lounge – Unterstützung</strong><button type="button" class="copy-bank" id="copy-purpose" data-copy="Kai Music Lounge - Unterstuetzung">Kopieren</button></div></div>
+<p id="support-account-status" class="notice" role="status">Für eine sichere Zuordnung deiner XP melde dich mit deinem kostenlosen Community-Konto an.</p>
+<div class="support-qr-wrap"><div><h3>Mit deiner Banking-App scannen</h3><p class="muted">Der GiroCode enthält Empfänger, IBAN, gewählten Betrag und Verwendungszweck. Alternativ kannst du die Felder einzeln kopieren.</p></div><div id="payment-qr" class="payment-qr" aria-label="SEPA-GiroCode für die gewählte Überweisung"><span>QR-Code wird erstellt …</span></div></div>
+<p id="bank-actions-status" class="feedback" role="status"></p>
+<p class="fine">Überweise erst in deiner eigenen Banking-App. Kein Abo, keine automatische Abbuchung. Eine XP-Gutschrift erfolgt erst nach Prüfung des tatsächlichen Zahlungseingangs. Bank-Apps unterstützen GiroCode unterschiedlich.</p></div>
+<aside class="support-aside"><div class="panel"><img src="community-emblem.webp" alt="Kai’s Community" class="support-emblem"><span class="kicker">UNSERE COMMUNITY SAGT DANKE</span><h2>Jeder Beitrag hilft – deine Teilnahme zählt noch mehr.</h2><p>Wenn du möchtest, bedanken wir uns im Livestream persönlich bei dir. Teile uns dafür freiwillig deinen Community-Namen mit und erlaube uns ausdrücklich, ihn öffentlich zu nennen.</p><a class="outline-button full" href="mailto:support@mesofari.de?subject=Kai%20Music%20Lounge%20-%20Danksagung">Danksagung anfragen</a><p class="fine">Ohne ausdrückliche Zustimmung nennen wir weder deinen Namen noch deinen Beitrag. Eine freiwillige Unterstützung an unseren gewerblichen Betreiber ist keine gemeinnützige Spende; wir stellen keine steuerliche Spendenbescheinigung aus.</p></div>
+<div class="support-fair"><strong>♥ Alle sind gleich willkommen</strong><p>Unterstützungen beeinflussen weder Songplätze noch die Reihenfolge. Für alle gilt: zuerst eingereicht, zuerst dran – nach Freigabe.</p></div></aside></section></main>
+<footer class="footer wrap"><a href="./">Willkommen</a><a href="community.html">Community</a><a href="events.html">Themenabende</a><a href="datenschutz.html">Datenschutz</a><a href="teilnahmebedingungen.html">Teilnahmebedingungen</a><a href="../impressum.html">Impressum</a></footer>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js" defer></script>
+<script type="module">
+import {createClient} from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+import {SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY} from './config.js';
+const db=createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY),$=id=>document.getElementById(id);
+const IBAN='DE68100110012294859219', OWNER='Kai Detlef Hahn', values=[1,2,5,10,20,50,100,500,1000];
+let selected=10,member=null;
+const euro=v=>v.toLocaleString('de-DE',{style:'currency',currency:'EUR'});
+function purpose(){return member?'KML-'+member.id:'Kai Music Lounge - Unterstuetzung'}
+function epcText(){
+ // EPC069-12 SEPA Credit Transfer, UTF-8; blank BIC / purpose / structured reference.
+ return ['BCD','002','1','SCT','',OWNER,IBAN,'EUR'+selected.toFixed(2),'','',purpose()].join('\n');
+}
+function showQr(){
+ const area=$('payment-qr');area.replaceChildren();
+ if(typeof window.QRCode!=='function'){area.textContent='Falls der QR-Code nicht geladen wird, nutze die Kopierfunktionen.';return}
+ try{new window.QRCode(area,{text:epcText(),width:190,height:190,correctLevel:window.QRCode.CorrectLevel.M,colorDark:'#26132f',colorLight:'#ffffff'})}
+ catch(e){area.textContent='QR-Code ist momentan nicht verfügbar. Bitte die Kopierfunktionen nutzen.'}
+}
+function refresh(){
+ $('chosen-eur').textContent=euro(selected);$('chosen-xp').textContent='+'+selected.toLocaleString('de-DE')+' XP';
+ $('transfer-purpose').textContent=purpose();$('copy-purpose').dataset.copy=purpose();
+ document.querySelectorAll('[data-eur]').forEach(btn=>{const on=Number(btn.dataset.eur)===selected;btn.classList.toggle('selected',on);btn.setAttribute('aria-pressed',String(on))});
+ showQr();
+}
+document.querySelectorAll('[data-eur]').forEach(btn=>btn.addEventListener('click',()=>{const amount=Number(btn.dataset.eur);if(values.includes(amount)){selected=amount;refresh()}}));
+document.addEventListener('click',async event=>{
+ const button=event.target.closest('.copy-bank');if(!button)return;
+ const value=button.dataset.copy;
+ try{
+  if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(value);
+  else{const temp=document.createElement('textarea');temp.value=value;temp.style.position='fixed';temp.style.opacity='0';document.body.append(temp);temp.select();const success=document.execCommand('copy');temp.remove();if(!success)throw Error('copy');}
+  $('bank-actions-status').textContent='Kopiert – füge die Angabe in deiner Banking-App ein.';
+ }catch(e){$('bank-actions-status').textContent='Kopieren nicht möglich. Markiere und kopiere die angezeigte Angabe.'}
+});
+async function loadMember(){
+ const {data:{user}}=await db.auth.getUser();member=user;
+ const notice=$('support-account-status');
+ if(user){notice.replaceChildren();notice.append(document.createTextNode('Du bist angemeldet. Mit dem persönlichen Verwendungszweck kann Kai deine Überweisung deinem Community-Konto zuordnen. '+user.email?.split('@')[0]+' · '));const a=document.createElement('a');a.href='community.html#profil';a.textContent='Mein Profil';notice.append(a)}
+ else{notice.innerHTML='Für Community-XP ist ein kostenloses Konto erforderlich. <a href="community.html#profil">Jetzt anmelden oder registrieren</a>. Ohne Konto ist eine Unterstützung möglich, jedoch nicht automatisch einem Mitglied zuordenbar.'}
+ refresh();
+}
+db.auth.onAuthStateChange(()=>setTimeout(loadMember,0));
+window.addEventListener('load',refresh,{once:true});await loadMember();
+</script></body></html>
