@@ -1,61 +1,42 @@
-# Kai Music Lounge – Community-Levelsystem (Entwicklungsstand)
+# Kai Music Lounge – technische Übergabe (17. November 2026)
 
-## Bereits im Entwurfsbranch enthalten
-- `music/index.html`: öffentlich sichtbare Rangliste, persönliches Level, XP-Balken, Registrierung/Anmeldung über Supabase Auth, sobald konfiguriert.
-- `music/supabase-setup.sql`: Datenbankschema für Mitglieder, Themenabende, Einreichungen, XP-Einträge und N26-Zahlungsnachweise.
-- Link von der Hauptseite zur Level-Seite.
+## Plattform
+- Bestehende MESOFARI-Site auf GitHub Pages, keine neue Domain notwendig.
+- URL nach Zusammenführung: https://mesofari.de/music/
+- Supabase-Free-Projekt: `kai-music-lounge` (EU-Irland, Projektreferenz `qqykuvzketipuvpzujms`).
+- Die im Browser verwendete Konfiguration ist ausschließlich der **öffentliche** publishable Key: `music/config.js`. Keine geheime Service-Role in GitHub.
 
-**Nicht live / nicht vollständig:** Supabase-Projekt noch nicht angelegt, URL und publishable/anon key sind Platzhalter; keine echten Songs oder Zahlungen sind angebunden. Das SQL ist eine Startmigration für eine frische Datenbank und benötigt Sicherheits-/Integrationstests. Das Admin-Dashboard für Einreichungsfreigaben, Eventverwaltung und Zahlungsprüfung fehlt noch.
+## In diesem Entwicklungszweig umgesetzt
+- `index.html`: MESOFARI-Einstieg Apps / Spiele / Music Lounge und freiwillige Community-Unterstützung per N26-Überweisung (Beträge 1,2,5,10,20,50,100,500,1000 Euro).
+- `music/index.html`: Mitgliederregistrierung, Anmeldung, öffentlicher Level-/XP-Verlauf, persönliche Community-ID und Mitgliederliste (paginiert).
+- `music/events.html`: öffentliche Themenabende, Songlink + Geschichte, Zustimmung zu Regeln, öffentliche Warteschlange (30 Sekunden Auto-Refresh).
+- `music/admin.html`: abgesicherte Admin-Oberfläche für Events, Freigaben, Moderation und manuelle Bestätigung realer N26-Eingänge.
+- `music/lounge.css`: responsives Dark/Gold/Violett-Design.
+- Eigene `music/datenschutz.html`, `music/teilnahmebedingungen.html`, `music/community-melden.html`; bestehendes MESOFARI-Impressum verlinkt.
 
-## XP-Regeln
-- Level 1 bis 50.
-- Schwellen: Level 2–5 jeweils +10 XP; anschließend erhöht sich der nächste benötigte XP-Schritt um 5 XP je Level.
-- Erster durch den Admin freigegebener Song pro Mitglied und Event: +10 XP (nicht schon beim Absenden). Einzigartigkeit wird durch `unique(event_id,user_id)` erzwungen.
-- Unterstützung: 1 € = 1 XP. Gespeichert werden Cent; bei nicht vollen Euro wird für XP abgerundet. 1,99 € => 1 XP; 10 € => 10 XP; 1000 € => 1000 XP.
-- Level 50 ist die Grenze; XP darüber zählen weiter.
-- Öffentliche Ansicht: Community-Namen, XP, Level. Keine Kontodaten, Zahlungshistorie, E-Mail oder Songgeschichte.
+## In Supabase angelegt
+- Tabellen: `public.lounge_profiles`, `public.lounge_events`, `public.lounge_songs`.
+- Streng private Tabellen: `lounge_private.admin_users`, `lounge_private.supports`, `lounge_private.xp_ledger`.
+- Trigger schützen Einreichungsgrenzen und vergeben einmalig **10 XP** nach administrativer Freigabe.
+- Nur die neun festgelegten ganzzahligen Eurobeträge können im Admin-Bereich manuell nach bestätigtem Zahlungseingang gutgeschrieben werden (**1 Euro = 1 XP**). Unique Bankreferenz verhindert doppelte Buchung.
+- Öffentliche APIs erlauben nur Namen, Level/XP und die freigegebene Warteschlange. Geschichten bleiben intern.
+- Die Level 1-50 brauchen kumulativ 0 bis 5665 XP; ab Level 50 zählen XP weiter.
+- Datenbank-Migrationen wurden angewendet und Levelschwellen getestet. Die früher geplante Beispiel-DDL in `music/supabase-setup.sql` ist **absichtlich durch einen nur-lesenden Test ersetzt**.
 
-## Warum N26-Überweisung nicht automatisch XP gibt
-Eine normale SEPA-Überweisung an die N26-IBAN liefert kein vertrauenswürdiges Ereignis an GitHub Pages.
-1. Mitglied registriert sich, sieht seinen eindeutigen Verwendungszweck (KML-<User-ID>).
-2. Mitglied überweist freiwillig an das bekannte Geschäftskonto.
-3. Kontoinhaber überprüft **wirklich eingegangenes Geld** im N26-Konto und gleicht Betrag/Verwendungszweck ab.
-4. Nur ein sicherer Server-/Admin-Prozess mit Service-Rolle darf `lounge_confirm_support` einmalig aufrufen. Die Funktion verweigert öffentliche Aufrufe; der eindeutige Bank-Transaktionsbezug verhindert Doppelbuchungen.
-5. Danach werden XP und das Level beim Neuladen aktualisiert; erst dann darf eine Erfolgsmeldung „Vielen Dank – deine Unterstützung wurde bestätigt“ erscheinen.
+## Vor dem öffentlichen Betrieb noch erforderlich
+1. GitHub-PR #1 prüfen und zusammenführen, damit die Seiten tatsächlich unter mesofari.de erscheinen.
+2. In Supabase: **Authentication → URL Configuration**: Site URL = `https://mesofari.de`, zusätzliche Redirect-URL = `https://mesofari.de/music/` (ggf. www-Variante, sofern tatsächlich genutzt). Dies ist nicht über die zur Verfügung stehende Supabase-Verbindung konfigurierbar.
+3. Betreiber registriert über `/music/#profil` ein eigenes Konto, bestätigt die E-Mail-Adresse.
+4. Betreiberkonto muss **einmalig** als Admin in `lounge_private.admin_users` hinterlegt werden. Nicht durch bloße E-Mail-Vermutungen oder öffentliches Formular! Beispiel SQL nach Auth-Registrierung und konkreter Prüfung des Kontos:
+   `insert into lounge_private.admin_users(user_id) select id from auth.users where email = '<vom Betreiber verifizierte E-Mail>';`
+   Nicht ausführen, bevor Nutzer/Adresse sicher identifiziert sind.
+5. End-to-End-Tests mit echten, getrennten Admin- und Standardkonten: Registrierung, Event, Song, 10 XP nur nach Freigabe, RLS-Trennung, Warteschlange und Test der Einmaligkeit manueller Zahlungsbestätigungen **ohne fiktive Echtgeld-Buchungen**.
+6. Vor öffentlichen Zahlungen oder breiter Einladung: Datenschutzerklärung/AVV/Unterauftragnehmer für GitHub, Supabase, CDN und N26 prüfen; Löschfristen, Kontoauskunft, Datenexport/-löschung, Moderation und jugendschutzrechtliche Anforderungen verbindlich festlegen; Musikrechte für TikTok-Live prüfen. Eine rechtliche Abnahme ist nicht erfolgt.
+7. Die beiden vom Betreiber hochgeladenen Originalembleme noch als komprimierte Bilder einbinden – aktuell sind im Code stilisierte Musik-Symbole.
+8. Sicherheit im Betrieb: Supabase-RLS und Auth-Einstellungen sowie GitHub-Pages-Deployment überwachen; Abuse-Rate-Limits/CAPTCHA vor großem öffentlichen Start ergänzen.
 
-**Niemals** eine geheime Supabase-Service-Role in HTML/JavaScript oder auf GitHub ablegen. Niemals XP allein aufgrund eines Browser-Klicks erteilen.
-
-## Vor dem Livegang
-1. Supabase-Projekt erstellen und SQL in einer frischen Testdatenbank prüfen.
-2. Supabase Auth URL-Konfiguration und E-Mail-Verifikation festlegen.
-3. Supabase-Projekt-URL und **nur öffentlichen** publishable/anon key in `music/index.html` einsetzen.
-4. Verwaltungsfunktionen für Events, Songfreigaben und Zahlungseingang mit starkem Admin-Schutz implementieren. Als weitere Stufe: Rate Limiting, CAPTCHA, Anti-Spam, Moderation.
-5. Prüfung der Datenbank-RLS-Regeln mit Testkonten (öffentlich, fremdes Mitglied, eigenes Mitglied, Admin) und SEPA-Doppelbuchungen.
-6. Datenschutztext mit Accounts, öffentlich sichtbaren Namen/XP sowie Bank-/Support-Prozessen aktualisieren. Überprüfung des rechtlichen Rahmens für freiwillige Unterstützungen.
-7. Entwurfs-PR prüfen und erst nach erfolgreichem Test zusammenführen.
-
-## Fairness
-XP verschafft **keinen Vorrang** in der Songliste. Die Reihenfolge bleibt zeitlich aufsteigend nach Song-Einreichung. Ein Level ist ein öffentliches Anerkennungsabzeichen, kein käuflicher Vorteil.
-
-## Öffentliche Community-Mitglieder (Erweiterung 17.11.2026)
-- Über `music/` erscheint die öffentliche Community-Mitgliederliste mit Level und XP.
-- Bei kostenloser Registrierung wird automatisch ein Profil mit zufälligem Nickname angelegt; ein frei gewählter Name lässt sich nach der Anmeldung über die gesicherte RPC ändern.
-- Alle Besucher können die sichtbaren Nicknames, Level und XP sehen; nicht aber E-Mail-Adressen, Bankdaten, Songgeschichten oder Zahlungsbuchungen.
-- Die Community-Mitgliederseite zeigt zunächst 30 Profile und lädt über „Weitere Mitglieder anzeigen“ alle weiteren seitenweise. Die Daten kommen aus einer besonders eingeschränkten RPC ohne interne Benutzer-IDs.
-- Für dauerhafte XP-Zuordnung ist ein Benutzerkonto nötig. Ohne Anmeldung sind keine anonymen XP-Ansprüche verifizierbar.
-- Einreichungen werden aktuell ausschließlich in der Datenbank vorbereitet; eine echte öffentliche Einreichungsoberfläche und die Freigabeoberfläche müssen noch gebaut werden.
-- Eigene Lösch-/Exportfunktionen, Anti-Spam, Datenschutz-Test, Löschfristen und Dienstleisterangaben müssen vor Livegang fertig sein.
-
-## Rechtliche Entwürfe
-- `music/datenschutz.html` (DSGVO-Informationsentwurf)
-- `music/teilnahmebedingungen.html` (Teilnahme- und Fairplaybedingungen)
-- `music/community-melden.html` (Kontakt für problematische Inhalte)
-- Bestehendes `../impressum.html` bleibt erhalten.
-**Keine anwaltliche Prüfung, keine Behauptung vollständiger Compliance.** Tatsächliche Supabase-Region/Unterauftragnehmer, Aufbewahrungszeiten, Berechtigung des Musikstreamings und Moderationsprozesse vor Aktivierung verifizieren.
-
-## Rechtliche Quellen und Prüfbedarf (Stand November 2026)
-- § 5 DDG: https://www.gesetze-im-internet.de/ddg/__5.html
-- Art. 13 DSGVO: https://eur-lex.europa.eu/eli/reg/2016/679/oj
-- Bundesnetzagentur DSA-Pflichten (Einordnung je nach Dienst erforderlich): https://www.bundesnetzagentur.de/DE/Fachthemen/DSC/1_Themen/PflichtenVermittlunggsdienste/start.html
-- Musikrechte im Social Media-Stream: https://www.gema.de/de/hilfe/musiknutzer/musik-nutzen/social-media-websites
-- EU-ODR-Plattform geschlossen seit Juli 2025: https://consumer-redress.ec.europa.eu/site-relocation_en
+## Wichtig
+- Die Gratis-Tarife haben Begrenzungen und können bei längerer Inaktivität pausieren.
+- Die Überweisung an N26 ist **keine automatisch bestätigte Zahlung**. Das Setzen eines Betrags im Browser löst keine Überweisung aus und vergibt keine XP.
+- Song-Freigaben und Bankbuchungen sind nur an echte Administratoren gebunden.
+- Die Datenbank besteht bereits; **kein zweites Supabase-Projekt** erstellen.
