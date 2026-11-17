@@ -62,7 +62,7 @@ document.addEventListener('click',async event=>{
 async function loadMember(){
  const {data:{user}}=await db.auth.getUser();member=user;
  const notice=$('support-account-status');
- if(user){notice.replaceChildren();notice.append(document.createTextNode('Du bist angemeldet. Mit dem persönlichen Verwendungszweck kann Kai deine Überweisung deinem Community-Konto zuordnen. '+user.email?.split('@')[0]+' · '));const a=document.createElement('a');a.href='community.html#profil';a.textContent='Mein Profil';notice.append(a)}
+ if(user){notice.replaceChildren();notice.append(document.createTextNode('Du bist angemeldet. Mit dem persönlichen Verwendungszweck kann Kai deine Überweisung deinem Community-Konto zuordnen. '));const a=document.createElement('a');a.href='community.html#profil';a.textContent='Mein Profil';notice.append(a)}
  else{notice.innerHTML='Für Community-XP ist ein kostenloses Konto erforderlich. <a href="community.html#profil">Jetzt anmelden oder registrieren</a>. Ohne Konto ist eine Unterstützung möglich, jedoch nicht automatisch einem Mitglied zuordenbar.'}
  refresh();
 }
