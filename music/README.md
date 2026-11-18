@@ -24,3 +24,6 @@ End-to-End-Test auf Mobilgeräten: Registrierung, Passwort/E-Mail-Bestätigung, 
 
 ## UX-Anforderungen
 Der Willkommensbereich soll warm, inklusiv und dankbar sein: „Musik verbindet“ und jeder Besucher ist ohne Geldbeitrag willkommen. Bezahlfunktionen nur auf der Unterstützungsseite. Profile zeigen dauerhaft das Community-Banner mit Namen/XP, aber keine Bankangaben. Alle Wege bleiben mobil gut erreichbar.
+
+## Automatische Mitgliedschaft (November 2026)
+Beim ersten Einreichen per `music/events.html` verwendet der Browser `supabase.auth.signInAnonymously({options:{data:{community_name}}})`. Der bestehende Supabase-Trigger `lounge_private.new_profile` legt ein eindeutiges öffentliches Profil an. Der Song wird dann immer mit `user_id` angelegt; `lounge_private.credit_song` schreibt nach Admin-Freigabe genau einmal 10 XP gut. Die Browser-Sitzung dient als Eigentumsnachweis und geht bei Cookie-/Browserdaten-Löschung verloren. In `music/community.html` gibt es eine freiwillige E-Mail-Verifikation zur dauerhaften Sicherung. Erforderliche Betriebs-Einstellung: **Supabase Authentication → Sign In / Providers → Allow anonymous sign-ins einschalten**. Ohne diese Umschaltung funktioniert die automatische Erst-Einreichung noch nicht. Öffentliche anonyme Datenbank-INSERTs sind wieder gesperrt; andernfalls wären XP ohne Identität übernehmbar.
