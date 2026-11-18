@@ -2,8 +2,8 @@
 <body><header class="top wrap"><a class="brand" href="../#music"><span class="brand-mark">♫</span><span>KAI <b>MUSIC LOUNGE</b></span></a><nav><a href="./">Willkommen</a><a href="community.html">Community</a><a href="events.html" aria-current="page">Themenabende</a><a href="unterstuetzen.html">Unterstützen</a><a href="admin.html">Admin</a></nav></header>
 <main class="wrap"><section class="hero"><span class="kicker">DEIN SONG · DEINE GESCHICHTE · UNSERE BÜHNE</span><h1>Zeig uns <em>deinen Song.</em></h1><p>Wähle einen Themenabend, reiche deinen Musiklink und deine persönliche Geschichte ein. Alle freigegebenen Songs erscheinen in der Reihenfolge ihres Eingangs. Kostenlos und ohne VIP-Vorrang.</p><div class="hero-links"><a class="gold-button" href="#events">Themenabende ansehen</a><a class="outline-button" href="#queue">Live-Songliste</a></div></section>
 <section id="events" class="section"><div class="heading"><div><span class="kicker">UNSERE VERANSTALTUNGEN</span><h2>Aktuelle Themenabende</h2></div><span id="auth-state" class="muted">Du kannst ohne Anmeldung Songs einreichen.</span></div><div id="event-list" class="event-grid"><p class="muted">Veranstaltungen werden geladen …</p></div></section>
-<section class="section split" id="submit"><div class="panel"><span class="kicker">SONG EINREICHEN</span><h2>Dein Beitrag</h2><p class="muted">Jeder darf ohne Registrierung mitmachen. Gäste geben ihren Namen an und erhalten keine XP. Angemeldete Mitglieder bekommen nach Freigabe ihres Songs +10 XP.</p><form id="song-form"><label for="guest-name">Dein Name / Community-Name</label><input id="guest-name" name="guest-name" type="text" minlength="2" maxlength="50" autocomplete="nickname" placeholder="Wie sollen wir dich nennen?" required><p class="muted tiny" id="guest-name-hint">Ohne Anmeldung einfach deinen Namen eingeben. Er wird nach Freigabe neben deinem Song öffentlich angezeigt.</p><label for="event-select">Themenabend</label><select id="event-select" required><option value="">Themenabende werden geladen …</option></select><p class="muted tiny" id="event-select-hint" role="status">Offene Themenabende werden automatisch vorausgewählt.</p><label for="song-title">Songtitel</label><input id="song-title" maxlength="120" required placeholder="Titel deines Songs"><label for="song-url">Link zu deinem Song</label><input id="song-url" type="url" required maxlength="1000" pattern="https://.*" inputmode="url" autocomplete="url" aria-describedby="song-url-help" placeholder="https://..."><p class="muted tiny" id="song-url-help">Suno, TikTok, Spotify, YouTube, SoundCloud oder eine andere Musikplattform – jeder öffentlich erreichbare HTTPS-Songlink ist willkommen.</p><label for="song-story">Deine Geschichte zu diesem Song</label><textarea id="song-story" rows="6" maxlength="2000" placeholder="Was bedeutet dir der Song? Diese Geschichte ist nur für die Moderation sichtbar."></textarea><label class="check"><input id="terms" type="checkbox" required><span>Ich habe die <a href="teilnahmebedingungen.html">Teilnahmebedingungen</a> und <a href="datenschutz.html">Datenschutzhinweise</a> gelesen. Ich bin zur Einreichung dieses Links berechtigt.</span></label><button class="gold-button full" id="send-song" type="submit">Song einreichen</button><p class="feedback" id="submit-feedback" role="status"></p></form></div>
-<aside class="panel rules"><span class="kicker">FAIR PLAY</span><h2>So läuft der Abend</h2><ol><li>Du kannst als Gast mit Namen einreichen. Eine Registrierung ist freiwillig.</li><li>Du wählst einen offenen Themenabend und sendest deinen Songlink samt Geschichte.</li><li>Kai prüft den Song. Registrierte Mitglieder erhalten nach Freigabe <strong>+10 XP</strong>; Gäste können kostenlos ohne XP mitmachen.</li><li>Die öffentliche Liste zeigt die Reihenfolge nach Einreichungszeitpunkt.</li></ol><div class="notice">Deine persönliche Geschichte erscheint <strong>nicht</strong> öffentlich in der Warteliste. Eine Einreichung garantiert keine Wiedergabe, falls die Sendezeit nicht ausreicht.</div><a class="outline-button" href="community.html#profil">Zum Mitgliedskonto</a></aside></section>
+<section class="section split" id="submit"><div class="panel"><span class="kicker">SONG EINREICHEN</span><h2>Dein Beitrag</h2><p class="muted">Jeder kann ohne E-Mail und Passwort mitmachen. Gib deinen Namen ein – bei deiner ersten Einreichung entsteht automatisch dein Kai’s Community-Profil. Nach Freigabe erhältst du +10 XP und deinen Community-Banner.</p><form id="song-form"><label for="guest-name">Dein Community-Name</label><input id="guest-name" name="guest-name" type="text" minlength="2" maxlength="40" autocomplete="nickname" placeholder="Wie heißt du in unserer Community?" required aria-describedby="guest-name-hint"><p class="muted tiny" id="guest-name-hint">Dieser Name erscheint auf deinem automatisch erstellten Community-Profil mit Level und XP. Kein Passwort nötig.</p><label for="event-select">Themenabend</label><select id="event-select" required><option value="">Themenabende werden geladen …</option></select><p class="muted tiny" id="event-select-hint" role="status">Offene Themenabende werden automatisch vorausgewählt.</p><label for="song-title">Songtitel</label><input id="song-title" maxlength="120" required placeholder="Titel deines Songs"><label for="song-url">Link zu deinem Song</label><input id="song-url" type="url" required maxlength="1000" pattern="https://.*" inputmode="url" autocomplete="url" aria-describedby="song-url-help" placeholder="https://..."><p class="muted tiny" id="song-url-help">Suno, TikTok, Spotify, YouTube, SoundCloud oder eine andere Musikplattform – jeder öffentlich erreichbare HTTPS-Songlink ist willkommen.</p><label for="song-story">Deine Geschichte zu diesem Song</label><textarea id="song-story" rows="6" maxlength="2000" placeholder="Was bedeutet dir der Song? Diese Geschichte ist nur für die Moderation sichtbar."></textarea><label class="check"><input id="terms" type="checkbox" required><span>Ich habe die <a href="teilnahmebedingungen.html">Teilnahmebedingungen</a> und <a href="datenschutz.html">Datenschutzhinweise</a> gelesen. Ich bin zur Einreichung dieses Links berechtigt.</span></label><button class="gold-button full" id="send-song" type="submit">Song einreichen</button><p class="feedback" id="submit-feedback" role="status"></p></form></div>
+<aside class="panel rules"><span class="kicker">FAIR PLAY</span><h2>So läuft der Abend</h2><ol><li>Gib deinen Community-Namen ein. Ein Profil entsteht beim ersten Einreichen automatisch – ohne E-Mail oder Passwort.</li><li>Du wählst einen offenen Themenabend und sendest deinen Songlink samt Geschichte.</li><li>Kai prüft deinen Song. Nach der Freigabe erhältst du <strong>+10 XP</strong>, auch ohne vorherige Registrierung.</li><li>Die öffentliche Liste zeigt die Reihenfolge nach Einreichungszeitpunkt.</li></ol><div class="notice">Deine persönliche Geschichte erscheint <strong>nicht</strong> öffentlich in der Warteliste. Eine Einreichung garantiert keine Wiedergabe, falls die Sendezeit nicht ausreicht.</div><a class="outline-button" href="community.html#profil">Zum Mitgliedskonto</a></aside></section>
 <section class="section" id="queue"><div class="heading"><div><span class="kicker">ÖFFENTLICHE WARTESCHLANGE</span><h2>Wann läuft dein Song?</h2></div><button id="refresh-queue" class="small-button" type="button">Aktualisieren ↻</button></div><p class="muted">Die Reihenfolge zeigt freigegebene Songs. Die Uhrzeit ist nicht garantiert; die Liste wird regelmäßig aktualisiert.</p><div class="panel"><label for="queue-event">Themenabend auswählen</label><select id="queue-event"><option value="">Bitte auswählen</option></select><div id="queue-rows" class="queue-list"><p class="muted">Noch kein Themenabend ausgewählt.</p></div><p class="muted tiny">Sortierung: zuerst eingereicht, zuerst dran. Kein bezahlter Vorrang.</p></div></section></main>
 <footer class="wrap footer"><a href="../">MESOFARI</a><a href="community.html">Community-Mitglieder</a><a href="unterstuetzen.html">Unterstützen</a><a href="datenschutz.html">Datenschutz</a><a href="teilnahmebedingungen.html">Teilnahmebedingungen</a><a href="../impressum.html">Impressum</a><a href="community-melden.html">Inhalte melden</a></footer>
 <script type="module">
@@ -14,19 +14,21 @@ const dt=v=>new Intl.DateTimeFormat('de-DE',{dateStyle:'full',timeStyle:'short',
 function node(tag,cls,txt){const x=document.createElement(tag);if(cls)x.className=cls;if(txt!==undefined)x.textContent=String(txt);return x}
 function feedback(msg,fail=false){el('submit-feedback').textContent=msg;el('submit-feedback').classList.toggle('error',fail)}
 async function refreshAuth(){
- const {data:{user:u},error}=await db.auth.getUser(); user=error?null:u;
+ const {data:{user:u},error}=await db.auth.getUser();user=error?null:u;
  const name=el('guest-name'),hint=el('guest-name-hint');
  if(user){
   const {data:profile}=await db.from('lounge_profiles').select('display_name').eq('user_id',user.id).maybeSingle();
-  name.value=profile?.display_name||user.user_metadata?.community_name||'Community-Mitglied';
+  name.value=profile?.display_name||user.user_metadata?.community_name||'';
   name.readOnly=true;
-  hint.textContent='Du bist angemeldet. Dein Community-Name wird automatisch verwendet. Nach Freigabe erhältst du +10 XP.';
-  el('auth-state').textContent='Angemeldet · +10 XP für freigegebene Songs';
+  const anonymous=user.is_anonymous===true;
+  hint.textContent=anonymous
+    ?'Dein Community-Profil ist auf diesem Gerät gespeichert. Du kannst XP sammeln. Sichere dein Konto später mit einer E-Mail-Adresse, damit du bei einem Gerätewechsel deinen Fortschritt nicht verlierst.'
+    :'Du bist angemeldet. Dein Community-Name wird übernommen und du erhältst nach Freigabe +10 XP.';
+  el('auth-state').textContent=(anonymous?'Community-Profil aktiv':'Angemeldet')+' · +10 XP pro freigegebenem Song';
  }else{
   name.readOnly=false;
-  name.value='';
-  hint.textContent='Ohne Registrierung: Gib deinen Namen ein. Er erscheint nach Freigabe in der öffentlichen Songliste. Gäste erhalten keine XP.';
-  el('auth-state').textContent='Gäste willkommen · keine Anmeldung nötig';
+  hint.textContent='Gib deinen neuen Community-Namen ein. Bei der ersten Einreichung wird ohne E-Mail oder Passwort ein persönliches Community-Profil angelegt. Dein Name ist danach öffentlich sichtbar.';
+  el('auth-state').textContent='Ohne Anmeldung Songs einreichen und XP sammeln';
  }
  el('send-song').disabled=false;
 }
@@ -48,29 +50,47 @@ for(const [i,s] of data.entries()){const row=node('div','queue-row');row.append(
 el('queue-event').addEventListener('change',loadQueue);el('refresh-queue').addEventListener('click',loadQueue);
 el('song-form').addEventListener('submit',async e=>{
  e.preventDefault();
- const guest_name=el('guest-name').value.trim();
- if(guest_name.length<2||guest_name.length>50){feedback('Bitte gib deinen Namen mit 2 bis 50 Zeichen an.',true);return}
+ const displayName=el('guest-name').value.trim();
+ if(displayName.length<2||displayName.length>40||/[<>\x00-\x1f\x7f]/.test(displayName)){
+  feedback('Bitte einen Community-Namen mit 2 bis 40 Zeichen eingeben.',true);return
+ }
  const event_id=el('event-select').value;
  const title=el('song-title').value.trim(),song_url=el('song-url').value.trim(),story=el('song-story').value.trim();
  if(!event_id||!events.some(x=>x.id===event_id&&x.submissions_open)){feedback('Dieser Themenabend ist nicht für Einreichungen geöffnet.',true);return}
- if(!/^https:\/\/\S+$/i.test(song_url)){feedback('Bitte einen vollständigen HTTPS-Musiklink eingeben, z. B. von Suno, TikTok, Spotify oder YouTube.',true);return}
- const button=el('send-song');button.disabled=true;feedback('Dein Song wird gespeichert …');
- const payload={event_id,title,song_url,story};
- if(user){payload.user_id=user.id}else{payload.guest_name=guest_name}
- const {error}=await db.from('lounge_songs').insert(payload);
- if(error){
-  let message='Dein Song konnte noch nicht gespeichert werden. Bitte versuche es erneut. Deine Eingaben bleiben erhalten.';
-  if(error.code==='23505')message='Du hast für diesen Themenabend bereits einen Song eingereicht.';
-  else if(error.code==='23514')message='Überprüfe bitte Namen und Link (HTTPS), oder versuche einen anderen Link.';
-  else if(/Einreichungen geschlossen/i.test(error.message||''))message='Die Song-Einreichung ist zurzeit geschlossen.';
-  else if(/Songplätze belegt/i.test(error.message||''))message='Leider sind alle Songplätze belegt.';
-  else if(/Zu viele Gast-Einreichungen/i.test(error.message||''))message='Gerade reichen sehr viele Gäste Songs ein. Bitte versuche es in einer Minute erneut.';
-  feedback(message,true);console.error('Song submission',error.code,error.message);
- }else{
-  feedback(user?'Vielen Dank! Dein Song ist eingegangen. Nach der Freigabe erhältst du +10 XP.':'Vielen Dank! Dein Song wurde ohne Anmeldung eingereicht und wartet auf Freigabe. Als Gast erhältst du keine XP.');
-  el('song-title').value='';el('song-url').value='';el('song-story').value='';el('terms').checked=false;
- }
- button.disabled=false;
+ if(!/^https:\/\/\S+$/i.test(song_url)){feedback('Bitte einen gültigen HTTPS-Musiklink von YouTube, TikTok, Spotify, Suno oder einer anderen Plattform eingeben.',true);return}
+ const button=el('send-song');button.disabled=true;
+ try{
+  if(!user){
+   feedback('Dein kostenloses Community-Profil wird erstellt …');
+   const {data:session,error:signupError}=await db.auth.signInAnonymously({
+     options:{data:{community_name:displayName}}
+   });
+   if(signupError||!session?.user){
+    const msg=signupError?.message||'Unbekannter Anmeldefehler';
+    const message=/anonymous.*(disabled|not enabled|not allowed)|signups not allowed/i.test(msg)
+      ?'Die automatische Community-Mitgliedschaft ist derzeit noch nicht freigeschaltet. Bitte versuche es später erneut.'
+      :/database error|already exists|duplicate|unique/i.test(msg)
+      ?'Dieser Community-Name ist möglicherweise bereits vergeben. Bitte wähle einen anderen.'
+      :'Das Community-Profil konnte nicht erstellt werden. Bitte versuche es erneut.';
+    feedback(message,true);console.error('Anonymous community profile',msg);return;
+   }
+   user=session.user;
+  }
+  feedback('Dein Song wird gespeichert …');
+  const {error}=await db.from('lounge_songs').insert({event_id,user_id:user.id,title,song_url,story});
+  if(error){
+   let message='Dein Song konnte noch nicht gespeichert werden. Bitte versuche es erneut. Deine Eingaben bleiben erhalten.';
+   if(error.code==='23505')message='Du hast für diesen Themenabend bereits einen Song eingereicht.';
+   else if(error.code==='23514')message='Bitte prüfe deinen Songlink und deinen Community-Namen.';
+   else if(/Einreichungen geschlossen/i.test(error.message||''))message='Die Song-Einreichung ist derzeit geschlossen.';
+   else if(/Songplätze belegt/i.test(error.message||''))message='Alle Songplätze sind leider bereits belegt.';
+   feedback(message,true);console.error('Song submission',error.code,error.message);
+  }else{
+   feedback('Vielen Dank, '+displayName+'! Dein Song wurde eingereicht. Nach Freigabe erhältst du +10 XP auf deinem Community-Profil.');
+   el('song-title').value='';el('song-url').value='';el('song-story').value='';el('terms').checked=false;
+   await refreshAuth();
+  }
+ }finally{button.disabled=false}
 });
 
 await refreshAuth();await loadEvents();timer=setInterval(loadQueue,30000);db.auth.onAuthStateChange(()=>{setTimeout(refreshAuth,0)});
